@@ -1,6 +1,6 @@
 import React from "react";
-import RevenueImage from "../../../assets/revenue.png";
-import ContainerImage from "../../../assets/container.png";
+import RevenueImage from "../../../assets/Revenue.png";
+import ContainerImage from "../../../assets/Container.png";
 
 const defaultPoints = [
   "Using AI for small tasks instead of real systems",

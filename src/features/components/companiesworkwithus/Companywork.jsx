@@ -1,6 +1,6 @@
 import React from "react";
 import Companywork from "../../../assets/Companywork.png";
-import ContainerImage from "../../../assets/container.png";
+import ContainerImage from "../../../assets/Container.png";
 
 const defaultPoints = [
 "We focus on revenue, not just activity",
