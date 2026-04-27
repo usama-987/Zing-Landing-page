@@ -1,16 +1,18 @@
-import React from "react";
 import HeroImage from "../../../assets/Hero.png";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const Ads = ({ 
   title = "If you're serious about scaling your business with AI, ads, and better systems, let's talk.",
   buttonText = "GET A FREE AI & GROWTH AUDIT",
   onButtonClick 
 }) => {
+  const { ref, visible } = useScrollAnimation();
   return (
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div
-          className="rounded-2xl overflow-hidden bg-cover bg-center min-h-[200px] flex items-center"
+          ref={ref}
+          className={`rounded-2xl overflow-hidden bg-cover bg-center min-h-[200px] flex items-center pre-animate${visible ? " animate-slide-in-left" : ""}`}
           style={{ 
             backgroundImage: `url(${HeroImage})`,
             backgroundSize: '100% 100%'
@@ -23,7 +25,7 @@ const Ads = ({
 
             <button
               onClick={onButtonClick}
-              className="mt-6 px-6 py-2.5 bg-white text-gray-900 text-xs sm:text-sm font-semibold uppercase tracking-wide rounded-lg hover:bg-gray-100 transition-all duration-200"
+              className="mt-6 px-6 py-2.5 bg-[#ffffff] text-[#1C1C1E] text-xs sm:text-sm font-semibold uppercase tracking-wide rounded-lg hover:bg-blue-200 transition-all duration-200"
             >
               {buttonText}
             </button>

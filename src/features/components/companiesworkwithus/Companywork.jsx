@@ -1,6 +1,7 @@
 import React from "react";
 import Companywork from "../../../assets/Companywork.png";
 import ContainerImage from "../../../assets/Container.png";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const defaultPoints = [
 "We focus on revenue, not just activity",
@@ -17,10 +18,11 @@ const CompanyWork = ({
   backgroundImage = ContainerImage,
   showImage = true,
 }) => {
+  const { ref, visible } = useScrollAnimation();
   return (
     <section className="w-full py-16">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"> 
-        <div className="bg-white p-8 md:p-12">
+        <div ref={ref} className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
 
@@ -47,7 +49,7 @@ const CompanyWork = ({
               ))}
             </div>
 
-            <button className="w-fit mt-2 bg-gray-950 text-white text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg">
+            <button className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
             Get a free AI & growth audit
           </button>
 
@@ -55,7 +57,7 @@ const CompanyWork = ({
 
           {/* RIGHT SIDE */}
           {showImage && (
-            <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] md:h-[350px]">
+            <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] md:h-[350px] hover-popup">
 
               {/* Background Image */}
               <img

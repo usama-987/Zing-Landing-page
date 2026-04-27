@@ -172,7 +172,7 @@ export default function HeroSection({
               {current.description}
             </p>
 
-            <button className="mt-4 sm:mt-6 rounded-full bg-white px-4 sm:px-5 md:px-7 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-gray-900 transition-all duration-200 hover:bg-gray-100 active:scale-95">
+            <button className="mt-4 sm:mt-6 rounded-full bg-[#FFFFFF] px-4 sm:px-5 md:px-7 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-[#1C1C1E] transition-all duration-200 hover:bg-blue-200 active:scale-95">
               {current.cta}
             </button>
           </div>

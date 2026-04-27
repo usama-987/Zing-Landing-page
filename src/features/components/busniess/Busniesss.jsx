@@ -1,6 +1,8 @@
 import React from "react";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const BusinessSection = () => {
+  const { ref, visible } = useScrollAnimation();
   const points = [
     "Higher return on ad spend",
     "More revenue from the same traffic",
@@ -13,7 +15,8 @@ const BusinessSection = () => {
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div
-  className="rounded-2xl p-8 md:p-12 relative overflow-hidden"
+  ref={ref}
+  className={`rounded-2xl p-8 md:p-12 relative overflow-hidden pre-animate${visible ? " animate-slide-in-left" : ""}`}
   style={{
     background: `
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E"),
@@ -29,8 +32,7 @@ const BusinessSection = () => {
               What this means for your business
             </h2>
             <button
-              className="text-white text-xs px-5 py-2.5 rounded-lg font-bold uppercase tracking-widest"
-              style={{ backgroundColor: "#1a1f24" }}
+              className="bg-[#1C1C1E] text-[#FFFFFF] text-xs px-5 py-2.5 rounded-lg font-bold uppercase tracking-widest hover:bg-gray-800 transition-all duration-200"
             >
               GET STARTED
             </button>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const steps = [
   { num: "01", title: "Audit",  desc: "We identify bottlenecks across ads, ecommerce, and operations", variant: "light" },
@@ -15,11 +16,13 @@ const cardBg = {
 };
 
 const HowWeWork = () => {
+  const { ref, visible } = useScrollAnimation();
   return (
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div
-          className="bg-white p-8 md:p-12 rounded-2xl"
+          ref={ref}
+          className={`bg-white p-8 md:p-12 rounded-2xl pre-animate${visible ? " animate-slide-in-left" : ""}`}
           style={{
             backgroundImage: `
               linear-gradient(rgba(180,190,210,0.18) 1px, transparent 1px),
@@ -38,7 +41,7 @@ const HowWeWork = () => {
           <p className="text-base text-gray-500 leading-relaxed max-w-xs">
             A clear process for building software and scaling growth.
           </p>
-          <button className="w-fit mt-2 bg-gray-950 text-white text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg">
+          <button className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
             Get a free AI & growth audit
           </button>
         </div>
@@ -48,7 +51,7 @@ const HowWeWork = () => {
           {steps.map(({ num, title, desc, variant }) => (
             <div
               key={num}
-              className="rounded-2xl p-5 flex flex-col gap-2 min-h-[180px]"
+              className="rounded-2xl p-5 flex flex-col gap-2 min-h-[180px] hover-popup cursor-pointer"
               style={{ background: cardBg[variant] }}
             >
               {/* Number badge */}

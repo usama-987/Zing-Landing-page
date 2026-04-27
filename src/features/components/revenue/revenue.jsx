@@ -1,6 +1,6 @@
-import React from "react";
 import RevenueImage from "../../../assets/Revenue.png";
 import ContainerImage from "../../../assets/Container.png";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const defaultPoints = [
   "Using AI for small tasks instead of real systems",
@@ -19,10 +19,12 @@ const Revenue = ({
   backgroundImage = ContainerImage,
   showImage = true,
 }) => {
+  const { ref, visible } = useScrollAnimation();
+
   return (
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"> 
-        <div className="bg-white p-8 md:p-12">
+        <div ref={ref} className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
 
@@ -65,7 +67,7 @@ const Revenue = ({
 
           {/* RIGHT SIDE */}
           {showImage && (
-            <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] md:h-[350px]">
+            <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] md:h-[350px] hover-popup">
 
               {/* Background Image */}
               <img

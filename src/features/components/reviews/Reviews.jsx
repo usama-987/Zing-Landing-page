@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 // Images
 import MikeFergusen from '../../../assets/mikeFerg.webp';
@@ -54,7 +55,7 @@ const UserReviews = [
   },
 ];
 
-const Reviews = ({ autoPlayInterval = 4000 }) => {
+const Reviews = ({ autoPlayInterval =2000 }) => {
   const [active, setActive] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -78,17 +79,27 @@ const Reviews = ({ autoPlayInterval = 4000 }) => {
     return () => clearInterval(timer);
   }, [active]);
 
-  // Show 3 reviews at a time
-  const visibleReviews = [
-    UserReviews[active],
-    UserReviews[(active + 1) % UserReviews.length],
-    UserReviews[(active + 2) % UserReviews.length],
-  ];
+  const { ref, visible } = useScrollAnimation();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const visibleReviews = isMobile
+    ? [UserReviews[active]]
+    : [
+        UserReviews[active],
+        UserReviews[(active + 1) % UserReviews.length],
+        UserReviews[(active + 2) % UserReviews.length],
+      ];
 
   return (
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="bg-white rounded-2xl p-8 md:p-12">
+        <div ref={ref} className={`bg-white rounded-2xl p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}>
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-12">
             What Client say about us
@@ -99,7 +110,7 @@ const Reviews = ({ autoPlayInterval = 4000 }) => {
             {visibleReviews.map((review, index) => (
               <div
                 key={index}
-                className="rounded-xl p-6 transition-all duration-300"
+                className="rounded-xl p-6 transition-all duration-300 hover-popup"
                 style={{
                   backgroundColor: '#F1F9FF',
                   opacity: animating ? 0.7 : 1,

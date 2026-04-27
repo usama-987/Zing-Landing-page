@@ -71,7 +71,7 @@ export default function Navbar({
                     className={`text-sm font-medium ${
                       activeLink === link.id
                         ? "text-blue-600"
-                        : "text-gray-700 hover:text-blue-600"
+                        : "text-[#000000] hover:text-blue-600"
                     }`}
                   >
                     {link.label}
@@ -89,7 +89,7 @@ export default function Navbar({
                       <a
                         key={i}
                         href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200"
+                        className="block px-4 py-2 text-sm text-[#000000] hover:bg-gray-200"
                       >
                         {item}
                       </a>
@@ -109,7 +109,7 @@ export default function Navbar({
                 }
                 onCtaClick?.();
               }}
-              className="bg-gray-900 text-white px-6 py-2 rounded-lg text-xs font-semibold uppercase hover:bg-gray-800"
+              className="bg-[#1C1C1E] text-[#FFFFFF] px-6 py-2 rounded-lg text-xs font-semibold uppercase hover:bg-gray-800"
             >
               {ctaText}
             </button>
@@ -148,7 +148,7 @@ export default function Navbar({
                     }
                   }}
                 >
-                  <span className="text-sm font-medium text-gray-800">
+                  <span className="text-sm font-medium text-[#000000]">
                     {link.label}
                   </span>
 
@@ -164,7 +164,7 @@ export default function Navbar({
                       <a
                         key={i}
                         href="#"
-                        className="text-sm text-gray-600 hover:text-blue-600"
+                        className="text-sm text-[#000000] hover:text-blue-600"
                         onClick={() => setMobileOpen(false)}
                       >
                         {item}
@@ -186,7 +186,7 @@ export default function Navbar({
                 }
                 onCtaClick?.();
               }}
-              className="bg-gray-900 text-white py-2 rounded-lg text-sm"
+              className="bg-[#1C1C1E] text-[#FFFFFF] py-2 rounded-lg text-sm"
             >
               {ctaText}
             </button>

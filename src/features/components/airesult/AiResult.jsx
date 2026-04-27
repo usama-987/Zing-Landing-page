@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import containerBg from "../../../assets/Container.png";
 import img1 from "../../../assets/img1.png";
 import img2 from "../../../assets/img2.png";
@@ -32,6 +32,79 @@ const features = [
   },
 ];
 
+function useRowAnimation() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, visible };
+}
+
+function FeatureRow({ item, index }) {
+  const { ref, visible } = useRowAnimation();
+  const isReversed = index % 2 !== 0;
+
+  // On even rows: text=left(from-left), image=right(from-right)
+  // On odd rows: text=right(from-right), image=left(from-left)
+  const textFromRight = isReversed;
+  const imageFromRight = !isReversed;
+
+  return (
+    <div
+      ref={ref}
+      className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center"
+    >
+      {/* TEXT */}
+      <div
+        className={`space-y-4 ${isReversed ? "md:order-2" : ""} ${
+          textFromRight ? "pre-animate-right" : "pre-animate"
+        }${visible ? (textFromRight ? " animate-slide-in-right" : " animate-slide-in-left") : ""}`}
+      >
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{item.title}</h3>
+        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item.desc}</p>
+        <button className="bg-[#1C1C1E] text-[#FFFFFF] px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wide hover:bg-gray-800 transition-all duration-200">
+          {item.btn}
+        </button>
+      </div>
+
+      {/* IMAGE */}
+      <div
+        className={`${isReversed ? "md:order-1" : ""} ${
+          imageFromRight ? "pre-animate-right" : "pre-animate"
+        }${visible ? (imageFromRight ? " animate-slide-in-right" : " animate-slide-in-left") : ""}`}
+      >
+        <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] md:h-[350px] hover-popup">
+          <img
+            src={containerBg}
+            alt="Container background"
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+          <div className="relative z-10 w-3/5 sm:w-1/2">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-auto object-contain rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const FeaturesSection = () => {
   return (
     <section className="w-full py-8">
@@ -40,43 +113,9 @@ const FeaturesSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-16">
             Where AI actually <br /> drives results
           </h2>
-
           <div className="space-y-12 md:space-y-16 lg:space-y-20">
             {features.map((item, index) => (
-              <div
-                key={index}
-                className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center`}
-              >
-                {/* TEXT */}
-                <div className={`space-y-4 ${index % 2 !== 0 ? "md:order-2" : ""}`}>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item.desc}</p>
-                  <button className="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wide hover:bg-gray-800 transition-all duration-200">
-                    {item.btn}
-                  </button>
-                </div>
-
-                {/* IMAGE WITH BACKGROUND */}
-                <div className={`${index % 2 !== 0 ? "md:order-1" : ""}`}>
-                  <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] md:h-[350px]">
-                    {/* Background Container Image */}
-                    <img
-                      src={containerBg}
-                      alt="Container background"
-                      className="absolute inset-0 w-full h-full object-contain"
-                    />
-                    
-                    {/* Feature Image */}
-                    <div className="relative z-10 w-3/5 sm:w-1/2">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-auto object-contain rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <FeatureRow key={index} item={item} index={index} />
             ))}
           </div>
         </div>
