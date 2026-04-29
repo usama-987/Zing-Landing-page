@@ -6,7 +6,7 @@ import Trusted4 from "../../../assets/Trusted4.png";
 import Trusted5 from "../../../assets/Trusted5.png";
 import Trusted6 from "../../../assets/Trusted6.png";
 import Trusted7 from "../../../assets/Trusted7.png";
-import HeroImage from "../../../assets/Hero.png";
+import HeroImage from "../../../assets/Marketing/Hero.png";
 
 // ─── Default Props ───────────────────────────────────────────────────────────
 

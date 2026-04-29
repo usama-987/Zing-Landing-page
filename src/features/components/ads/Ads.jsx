@@ -1,4 +1,4 @@
-import HeroImage from "../../../assets/Hero.png";
+import HeroImage from "../../../assets/Marketing/Hero.png";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const Ads = ({ 

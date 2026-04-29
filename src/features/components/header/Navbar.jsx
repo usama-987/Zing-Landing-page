@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../../assets/logo.png";
 import arrow from "../../../assets/SVG.png";
 
@@ -6,17 +7,29 @@ const defaultNavLinks = [
   {
     id: 1,
     label: "Home",
-    href: "#Home",
-    dropdown: ["Overview", "About Us", "Mission"],
+    to: "/",
   },
   {
     id: 2,
     label: "Services",
     href: "#Services",
-    dropdown: ["Web Design", "SEO", "Marketing"],
+    dropdown: [
+      { label: "Developer Augmentation", to: "/developer-augmentation" },
+      { label: "Marketing", to: "/marketing" },
+      { label: "Software Development", to: "/software-development" },
+    ],
   },
-  { id: 3, label: "Story", href: "#Story" },
-  { id: 4, label: "Partners", href: "#Partners" },
+  { id: 3,
+    label: "Story",
+    href: "#Story" ,
+  dropdown: [
+      { label: "AppSumo", to: "/story/appsumo" },
+      { label: "Authentic Detective", to: "/story/authentic-detective" },
+      { label: "Future Connoisseurs", to: "/story/future-connoisseurs" },
+  ],
+},
+
+  { id: 4, label: "Partners", to: "/partners" },
   { id: 5, label: "Blogs", href: "#Blogs" },
 ];
 
@@ -30,11 +43,29 @@ export default function Navbar({
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+  const navRef = useRef(null);
 
-  const handleLinkClick = (id, href) => {
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setOpenDropdown(null);
+        setMobileDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const navigate = useNavigate();
+
+  const handleLinkClick = (id, link) => {
     setActiveLink(id);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (link.to) {
+      navigate(link.to);
+    } else if (link.href) {
+      const el = document.querySelector(link.href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const toggleDropdown = (id) => {
@@ -42,7 +73,7 @@ export default function Navbar({
   };
 
   return (
-    <nav className="w-full sticky top-0 z-50 bg-[#F0F0F0] relative">
+    <nav ref={navRef} className="w-full sticky top-0 z-50 bg-[#F0F0F0] relative">
       <div className="mx-auto max-w-[1600px] px-4 py-3 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="flex items-center justify-between">
 
@@ -64,7 +95,7 @@ export default function Navbar({
                   onClick={() =>
                     link.dropdown
                       ? toggleDropdown(link.id)
-                      : handleLinkClick(link.id, link.href)
+                      : handleLinkClick(link.id, link)
                   }
                 >
                   <span
@@ -84,15 +115,18 @@ export default function Navbar({
 
                 {/* Desktop Dropdown */}
                 {link.dropdown && openDropdown === link.id && (
-                  <div className="absolute top-8 left-0 bg-[#F0F0F0] shadow-lg rounded-lg py-2 w-40 z-50">
+                  <div className="absolute top-8 left-0 bg-[#F0F0F0] rounded-xl shadow-xl z-50 min-w-[220px] overflow-hidden">
                     {link.dropdown.map((item, i) => (
-                      <a
+                      <Link
                         key={i}
-                        href="#"
-                        className="block px-4 py-2 text-sm text-[#000000] hover:bg-gray-200"
+                        to={item.to}
+                        onClick={() => setOpenDropdown(null)}
+                        className={`block px-5 py-4 text-sm font-medium text-[#1C1C1E] hover:bg-gray-200 transition-colors duration-150 ${
+                          i !== link.dropdown.length - 1 ? "border-b border-gray-300" : ""
+                        }`}
                       >
-                        {item}
-                      </a>
+                        {item.label}
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -143,7 +177,7 @@ export default function Navbar({
                         mobileDropdown === link.id ? null : link.id
                       );
                     } else {
-                      handleLinkClick(link.id, link.href);
+                      handleLinkClick(link.id, link);
                       setMobileOpen(false);
                     }
                   }}
@@ -159,16 +193,18 @@ export default function Navbar({
 
                 {/* Mobile Dropdown */}
                 {link.dropdown && mobileDropdown === link.id && (
-                  <div className="pl-4 mt-2 flex flex-col gap-2">
+                  <div className="mt-2 bg-[#F0F0F0] rounded-xl shadow-md overflow-hidden">
                     {link.dropdown.map((item, i) => (
-                      <a
+                      <Link
                         key={i}
-                        href="#"
-                        className="text-sm text-[#000000] hover:text-blue-600"
-                        onClick={() => setMobileOpen(false)}
+                        to={item.to}
+                        className={`block px-5 py-4 text-sm font-medium text-[#1C1C1E] hover:bg-gray-200 transition-colors duration-150 ${
+                          i !== link.dropdown.length - 1 ? "border-b border-gray-300" : ""
+                        }`}
+                        onClick={() => { setMobileOpen(false); setMobileDropdown(null); }}
                       >
-                        {item}
-                      </a>
+                        {item.label}
+                      </Link>
                     ))}
                   </div>
                 )}
