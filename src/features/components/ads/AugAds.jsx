@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 
 const AugAds = ({
   title = "Augmenting Your Development Team",
@@ -19,7 +20,7 @@ const AugAds = ({
               {title}
             </h2>
             <button
-              onClick={onButtonClick}
+              onClick={onButtonClick || scrollToContact}
               className="mt-4 sm:mt-6 px-4 py-1.5 bg-white text-[#1C1C1E] text-[10px] sm:text-xs font-semibold uppercase tracking-wide rounded hover:bg-gray-100 active:scale-95 transition-all duration-200"
             >
               {buttonText}

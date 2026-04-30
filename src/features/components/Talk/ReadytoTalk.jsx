@@ -38,6 +38,7 @@ const ReadytoTalk = () => {
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div
+          id="contact"
           ref={ref}
           className={`rounded-2xl overflow-hidden bg-cover bg-center flex flex-col items-center justify-center py-12 px-4 pre-animate${
             visible ? " animate-slide-in-left" : ""

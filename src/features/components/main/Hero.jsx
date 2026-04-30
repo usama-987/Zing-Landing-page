@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 import Trusted1 from "../../../assets/Trusted1.png";
 import Trusted2 from "../../../assets/Truested2.png";
 import Trusted3 from "../../../assets/Trusted3.png";
@@ -72,15 +73,14 @@ function BrandCard({ logo, alt }) {
 // ─── Trusted By Marquee ───────────────────────────────────────────────────────
 
 function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
-  const repeated = [...trustedBy, ...trustedBy];
+  const repeated = [...trustedBy, ...trustedBy, ...trustedBy];
 
   return (
     <div className="overflow-hidden px-3 sm:px-4 md:px-6 py-4 sm:py-[18px]">
-      {/* Only the keyframe lives here — everything else is Tailwind */}
       <style>{`
         @keyframes marquee-scroll {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
         }
       `}</style>
 
@@ -90,7 +90,8 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
 
       <div className="overflow-hidden w-full">
         <div
-          className="flex w-max gap-2 sm:gap-3 [animation:marquee-scroll_30s_linear_infinite] hover:[animation-play-state:paused]"
+          className="flex w-max gap-2 sm:gap-3 hover:[animation-play-state:paused]"
+          style={{ animation: "marquee-scroll 30s linear infinite", willChange: "transform" }}
         >
           {repeated.map((brand, index) => (
             <BrandCard key={`${brand.id}-${index}`} logo={brand.logo} alt={brand.alt} />
@@ -145,36 +146,37 @@ export default function HeroSection({
         />
 
         {/* Content */}
-        <div className="relative z-10 flex min-h-[280px] sm:min-h-[320px] md:min-h-[350px] lg:min-h-[380px] flex-col justify-between px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-12 lg:py-14 xl:px-16">
-          {/* Text area */}
-          <div
-            className="transition-all duration-300 mb-8 sm:mb-10 md:mb-12"
-            style={{
-              opacity: animating ? 0 : 1,
-              transform: animating ? "translateY(10px)" : "translateY(0)",
-            }}
-          >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight text-white">
-              {current.title}
-              <span
-                className="bg-clip-text text-transparent"
+        <div className="relative z-10 flex min-h-[380px] sm:min-h-[400px] md:min-h-[420px] lg:min-h-[440px] flex-col justify-between px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-12 lg:py-14 xl:px-16">
+          {/* Text area — all slides rendered, only active visible, prevents height shift */}
+          <div className="relative mb-8 sm:mb-10 md:mb-12">
+            {slides.map((slide, i) => (
+              <div
+                key={slide.id}
+                className="transition-all duration-300"
                 style={{
-                  backgroundImage: "linear-gradient(90deg, #60c8f0, #38e8d8)",
+                  opacity: i === activeIndex ? (animating ? 0 : 1) : 0,
+                  transform: i === activeIndex && animating ? "translateY(10px)" : "translateY(0)",
+                  position: i === activeIndex ? "relative" : "absolute",
+                  top: 0, left: 0, right: 0,
+                  pointerEvents: i === activeIndex ? "auto" : "none",
                 }}
               >
-                {current.highlightText}
-              </span>
-              ,<br />
-              {current.plainText.replace(/^,\s*/, '')}
-            </h1>
-
-            <p className="mt-3 sm:mt-4 max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-white">
-              {current.description}
-            </p>
-
-            <button className="mt-4 sm:mt-6 rounded-full bg-[#FFFFFF] px-4 sm:px-5 md:px-7 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-[#1C1C1E] transition-all duration-200 hover:bg-blue-200 active:scale-95">
-              {current.cta}
-            </button>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight text-white">
+                  {slide.title}
+                  <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(90deg, #60c8f0, #38e8d8)" }}>
+                    {slide.highlightText}
+                  </span>
+                  ,<br />
+                  {slide.plainText.replace(/^,\s*/, '')}
+                </h1>
+                <p className="mt-3 sm:mt-4 max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-white">
+                  {slide.description}
+                </p>
+                <button onClick={scrollToContact} className="mt-4 sm:mt-6 rounded-lg bg-[#FFFFFF] px-4 sm:px-5 md:px-7 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-[#1C1C1E] transition-all duration-200 hover:bg-blue-200 active:scale-95">
+                  {slide.cta}
+                </button>
+              </div>
+            ))}
           </div>
 
           {/* Stats + Slide indicators */}

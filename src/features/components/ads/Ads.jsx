@@ -1,6 +1,8 @@
 import HeroImage from "../../../assets/Marketing/Hero.png";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
+import { scrollToContact } from "../../../hooks/scrollToContact";
+
 const Ads = ({ 
   title = "If you're serious about scaling your business with AI, ads, and better systems, let's talk.",
   buttonText = "GET A FREE AI & GROWTH AUDIT",
@@ -24,7 +26,7 @@ const Ads = ({
             </h2>
 
             <button
-              onClick={onButtonClick}
+              onClick={onButtonClick || scrollToContact}
               className="mt-6 px-6 py-2.5 bg-[#ffffff] text-[#1C1C1E] text-xs sm:text-sm font-semibold uppercase tracking-wide rounded-lg hover:bg-blue-200 transition-all duration-200"
             >
               {buttonText}

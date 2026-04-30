@@ -1,5 +1,6 @@
 import React from "react";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 
 const BusinessSection = () => {
   const { ref, visible } = useScrollAnimation();
@@ -32,6 +33,7 @@ const BusinessSection = () => {
               What this means for your business
             </h2>
             <button
+              onClick={scrollToContact}
               className="bg-[#1C1C1E] text-[#FFFFFF] text-xs px-5 py-2.5 rounded-lg font-bold uppercase tracking-widest hover:bg-gray-800 transition-all duration-200"
             >
               GET STARTED

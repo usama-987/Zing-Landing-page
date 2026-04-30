@@ -2,6 +2,7 @@ import React from "react";
 import Companywork from "../../../assets/Companywork.png";
 import ContainerImage from "../../../assets/Container.png";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 
 const defaultPoints = [
 "We focus on revenue, not just activity",
@@ -49,7 +50,7 @@ const CompanyWork = ({
               ))}
             </div>
 
-            <button className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
+            <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
             Get a free AI & growth audit
           </button>
 

@@ -4,6 +4,10 @@ import HeroImg from '../../assets/Marketing/Hero.png';
 import Footer from "../components/footer/Footer";
 import FAQSection from "../components/FAQs/Faqs";
 import ReadytoTalk from "../components/Talk/ReadytoTalk";
+import OurWork from "../components/ourwork/OurWork";
+import VideoTestimonials from "../components/VideoTestimonials/VideoTestimonials";
+import ComparisonSection from "../components/Comparison/ComparisonSection";
+
 
 const SoftwareDevelopment = () => {
   return (
@@ -21,6 +25,9 @@ const SoftwareDevelopment = () => {
         buttonText="GET STARTED"
         bgImage={HeroImg}
       />
+      <VideoTestimonials />
+      <ComparisonSection />
+      <OurWork />
       <FAQSection />
       <ReadytoTalk />
       <Footer />

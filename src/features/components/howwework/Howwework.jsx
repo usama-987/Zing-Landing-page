@@ -1,5 +1,6 @@
 import React from "react";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 
 const steps = [
   { num: "01", title: "Audit",  desc: "We identify bottlenecks across ads, ecommerce, and operations", variant: "light" },
@@ -41,7 +42,7 @@ const HowWeWork = () => {
           <p className="text-base text-gray-500 leading-relaxed max-w-xs">
             A clear process for building software and scaling growth.
           </p>
-          <button className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
+          <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
             Get a free AI & growth audit
           </button>
         </div>

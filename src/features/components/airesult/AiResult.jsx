@@ -4,6 +4,7 @@ import img1 from "../../../assets/img1.png";
 import img2 from "../../../assets/img2.png";
 import img3 from "../../../assets/img3.png";
 import img4 from "../../../assets/img4.png";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 
 const features = [
   {
@@ -75,7 +76,7 @@ function FeatureRow({ item, index }) {
       >
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{item.title}</h3>
         <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item.desc}</p>
-        <button className="bg-[#1C1C1E] text-[#FFFFFF] px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wide hover:bg-gray-800 transition-all duration-200">
+        <button onClick={scrollToContact} className="bg-[#1C1C1E] text-[#FFFFFF] px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wide hover:bg-gray-800 transition-all duration-200">
           {item.btn}
         </button>
       </div>
