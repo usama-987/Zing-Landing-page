@@ -6,9 +6,9 @@ import Footer from "../components/footer/Footer";
 import HeroImg from "../../assets/Marketing/Hero.png";
 import UserImg from "../../assets/CaseStudy2/User.png";
 import FcLogo from "../../assets/CaseStudy2/Fc.png";
-import IiIcon from "../../assets/casestudy1/Ii.svg";
-import FbIcon from "../../assets/casestudy1/Fb.svg";
-import LsIcon from "../../assets/casestudy1/Ls.svg";
+import IiIcon from "../../assets/CaseStudy1/Ii.svg";
+import FbIcon from "../../assets/CaseStudy1/Fb.svg";
+import LsIcon from "../../assets/CaseStudy1/Ls.svg";
 import CaseStudyHero from "../components/CaseStudy/CaseStudyHero";
 
 

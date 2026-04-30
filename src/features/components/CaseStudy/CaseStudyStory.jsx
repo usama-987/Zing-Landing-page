@@ -1,6 +1,6 @@
 import  { useEffect, useRef, useState } from "react";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
-import ColonIcon from "../../../assets/casestudy1/Colon.svg";
+import ColonIcon from "../../../assets/CaseStudy1/Colon.svg";
 
 function useStatsVisible() {
   const ref = useRef(null);

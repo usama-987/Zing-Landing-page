@@ -5,11 +5,11 @@ import CaseStudyStory from "../components/CaseStudy/CaseStudyStory";
 import ReadytoTalk from "../components/Talk/ReadytoTalk";
 import Footer from "../components/footer/Footer";
 import HeroImg from "../../assets/Marketing/Hero.png";
-import UserImg from "../../assets/casestudy1/User.png";
-import AppSumoLogo from "../../assets/casestudy1/AppSumo.png";
-import IiIcon from "../../assets/casestudy1/Ii.svg";
-import FbIcon from "../../assets/casestudy1/Fb.svg";
-import LsIcon from "../../assets/casestudy1/Ls.svg";
+import UserImg from "../../assets/CaseStudy1/User.png";
+import AppSumoLogo from "../../assets/CaseStudy1/AppSumo.png";
+import IiIcon from "../../assets/CaseStudy1/Ii.svg";
+import FbIcon from "../../assets/CaseStudy1/Fb.svg";
+import LsIcon from "../../assets/CaseStudy1/Ls.svg";
 
 const sections = [
   {
