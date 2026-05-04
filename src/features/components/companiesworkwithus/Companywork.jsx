@@ -1,4 +1,3 @@
-import React from "react";
 import Companywork from "../../../assets/Companywork.png";
 import ContainerImage from "../../../assets/Container.png";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
@@ -23,13 +22,13 @@ const CompanyWork = ({
   return (
     <section className="w-full py-16">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16"> 
-        <div ref={ref} className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}>
+        <div ref={ref} className={`bg-[#FFFFFF] p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
 
           {/* LEFT SIDE */}
           <div className="space-y-4 sm:space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-[#0F0F10] leading-tight">
               {title}
             </h2>
 
@@ -43,14 +42,14 @@ const CompanyWork = ({
                     <span className="text-green-500 text-lg font-bold leading-none">✓</span>
                   </div>
 
-                  <p className="text-sm sm:text-base text-gray-700">
+                  <p className="text-sm sm:text-base font-normal text-[#020202]">
                     {point}
                   </p>
                 </div>
               ))}
             </div>
 
-            <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
+            <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs uppercase tracking-widest px-6 py-3.5 rounded-lg font-normal hover:bg-gray-800 transition-all duration-200">
             Get a free AI & growth audit
           </button>
 

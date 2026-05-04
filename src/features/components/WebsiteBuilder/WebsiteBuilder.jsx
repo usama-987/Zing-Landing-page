@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BgBlue from "../../../assets/DevAug/BgBlue.png";
 import WebappImg from "../../../assets/DevAug/Webapp.png";
 import WordpressIcon from "../../../assets/DevAug/Wordpress.svg";

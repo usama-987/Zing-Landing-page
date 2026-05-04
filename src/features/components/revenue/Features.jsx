@@ -19,10 +19,10 @@ const FeatureSection = ({
 
             {/* LEFT TEXT */}
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight max-w-xs">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#0F0F10] leading-tight">
                 {title}
               </h2>
-              <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xs">
+              <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xs ">
                 {description}
               </p>
             </div>
@@ -56,5 +56,3 @@ const FeatureSection = ({
 };
 
 export default FeatureSection;
-
-

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 import { scrollToContact } from "../../../hooks/scrollToContact";
 
@@ -35,14 +35,14 @@ const HowWeWork = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         {/* Left */}
-        <div className="flex flex-col gap-5">
-          <h2 className="text-5xl lg:text-6xl font-black text-gray-950 leading-[1.08] tracking-tight">
+        <div className="flex flex-col gap-5 mt-4 lg:mt-30 ">
+          <h2 className="text-5xl lg:text-6xl font-medium text-[#0F0F10] leading-[1.08] tracking-tight">
             How We Work
           </h2>
-          <p className="text-base text-gray-500 leading-relaxed max-w-xs">
+          <p className="text-base text-[#656565] font-normal leading-relaxed max-w-xs">
             A clear process for building software and scaling growth.
           </p>
-          <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
+          <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-normal uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
             Get a free AI & growth audit
           </button>
         </div>
@@ -52,15 +52,15 @@ const HowWeWork = () => {
           {steps.map(({ num, title, desc, variant }) => (
             <div
               key={num}
-              className="rounded-2xl p-5 flex flex-col gap-2 min-h-[180px] hover-popup cursor-pointer"
+              className="rounded-2xl p-5 flex flex-col gap-2 min-h-[140px] hover-popup cursor-pointer"
               style={{ background: cardBg[variant] }}
             >
               {/* Number badge */}
-              <span className="self-start text-xs font-semibold text-slate-500 bg-white/60 backdrop-blur-sm px-2.5 py-1 rounded-lg mb-2">
+              <span className="self-start text-xs font-normal text-[#3E3E3E] bg-[#FFFFFF] backdrop-blur-sm px-2.5 py-1 rounded-lg mb-2">
                 {num}
               </span>
-              <p className="text-base font-bold text-gray-900">{title}</p>
-              <p className="text-sm text-slate-500 leading-relaxed">{desc}</p>
+              <p className="text-base font-medium text-[#0A0028]">{title}</p>
+              <p className="text-sm text-[#6C6C6C] font-normal leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>

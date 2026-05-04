@@ -1,4 +1,3 @@
-import React from "react";
 import ServiceCard from "../ui/ServiceCard";
 import NodeIcon from "../../../assets/DevAug/Js.svg";
 import PhpIcon from "../../../assets/DevAug/Php.svg";

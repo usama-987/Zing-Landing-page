@@ -101,7 +101,7 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div ref={ref} className={`bg-white rounded-2xl p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}>
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#000000DE] mb-12">
             What Client say about us
           </h2>
 
@@ -124,8 +124,8 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className="font-semibold text-gray-900 text-sm">{review.name}</h3>
-                    <p className="text-xs text-gray-500">{review.role}</p>
+                    <h3 className="font-normal text-[#000000DE] text-sm">{review.name}</h3>
+                    <p className="text-xs font-normal text-[#84798B]">{review.role}</p>
                   </div>
                 </div>
 
@@ -137,7 +137,7 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
                 </div>
 
                 {/* Review Text */}
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm font-nomal text-[#656565] leading-relaxed">
                   "{review.text}"
                 </p>
               </div>

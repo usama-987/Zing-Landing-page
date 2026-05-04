@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import containerBg from "../../../assets/Container.png";
 import MobileappImg from "../../../assets/DevAug/Mobileapp.png";
 import NativeIcon from "../../../assets/DevAug/Native.svg";

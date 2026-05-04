@@ -60,7 +60,7 @@ const defaultTrustedBy = [
 
 function BrandCard({ logo, alt }) {
   return (
-    <div className="flex shrink-0 items-center justify-center overflow-hidden rounded-lg sm:rounded-xl bg-white border border-gray-200 w-[120px] sm:w-[140px] md:w-[148px] h-[60px] sm:h-[68px] md:h-[72px]">
+    <div className="flex shrink-0 items-center justify-center overflow-hidden rounded-lg sm:rounded-xl bg-white border-none w-[120px] sm:w-[140px] md:w-[148px] h-[60px] sm:h-[68px] md:h-[72px]">
       <img
         src={logo}
         alt={alt || "brand logo"}
@@ -84,7 +84,7 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
         }
       `}</style>
 
-      <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">
+      <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl font-medium text-[#0F0F10]">
         {title}
       </p>
 
@@ -133,7 +133,7 @@ export default function HeroSection({
   const current = slides[activeIndex];
 
   return (
-    <section className="w-full font-sans px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       {/* ── Hero Banner ── */}
       <div className="relative mx-auto w-full max-w-[1600px] overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
         {/* Background image */}
@@ -161,18 +161,18 @@ export default function HeroSection({
                   pointerEvents: i === activeIndex ? "auto" : "none",
                 }}
               >
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight text-white">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-normal leading-tight text-[#FFFFFF]">
                   {slide.title}
-                  <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(90deg, #60c8f0, #38e8d8)" }}>
+                  <span className="bg-clip-text  font-normal text-[#51A2FF]">
                     {slide.highlightText}
                   </span>
                   ,<br />
                   {slide.plainText.replace(/^,\s*/, '')}
                 </h1>
-                <p className="mt-3 sm:mt-4 max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-white">
+                <p className="mt-3 sm:mt-4 max-w-2xl text-xs sm:text-sm md:text-base font-normal leading-relaxed text-[#FFFFFF]">
                   {slide.description}
                 </p>
-                <button onClick={scrollToContact} className="mt-4 sm:mt-6 rounded-lg bg-[#FFFFFF] px-4 sm:px-5 md:px-7 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-[#1C1C1E] transition-all duration-200 hover:bg-blue-200 active:scale-95">
+                <button onClick={scrollToContact} className="mt-4 sm:mt-6 rounded-lg bg-[#FFFFFF] px-4 sm:px-5 md:px-7 py-2 sm:py-2.5 text-[10px] sm:text-xs font-normal uppercase tracking-wide text-[#1C1C1E] transition-all duration-200 hover:bg-blue-200 active:scale-95">
                   {slide.cta}
                 </button>
               </div>
@@ -185,10 +185,10 @@ export default function HeroSection({
             <div className="flex gap-6 sm:gap-8 md:gap-12">
               {stats.map((stat, i) => (
                 <div key={i}>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#FFFFFF]">
                     {stat.value}
                   </p>
-                  <p className="mt-0.5 text-[10px] sm:text-xs text-white">{stat.label}</p>
+                  <p className="mt-0.5 text-[10px] sm:text-xs text-[#FFFFFF]">{stat.label}</p>
                 </div>
               ))}
             </div>

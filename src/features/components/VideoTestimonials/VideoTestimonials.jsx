@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import  { useState, useEffect, useRef } from "react";
 
 
 const noiseUrl = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='0.13'/%3E%3C/svg%3E")`;
@@ -103,15 +103,20 @@ function VideoCard({ video }) {
 
 const VideoTestimonials = ({ items = videos }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleSet, setVisibleSet] = useState(new Set([0]));
   const sectionRefs = useRef([]);
   const containerRef = useRef(null);
 
-  // Each video section is 100vh tall — track which one is in view
   useEffect(() => {
     const observers = items.map((_, i) => {
       const observer = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveIndex(i); },
-        { threshold: 0.5 }
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveIndex(i);
+            setVisibleSet((prev) => new Set([...prev, i]));
+          }
+        },
+        { threshold: 0.3, rootMargin: "-64px 0px 0px 0px" }
       );
       if (sectionRefs.current[i]) observer.observe(sectionRefs.current[i]);
       return observer;
@@ -120,50 +125,54 @@ const VideoTestimonials = ({ items = videos }) => {
   }, [items]);
 
   const scrollToVideo = (i) => {
-    sectionRefs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const el = sectionRefs.current[i];
+    if (!el) return;
+    const navbarHeight = 64;
+    const tabBarHeight = 48;
+    const offset = el.getBoundingClientRect().top + window.scrollY - navbarHeight - tabBarHeight - 16;
+    window.scrollTo({ top: offset, behavior: "smooth" });
   };
 
   return (
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="bg-white p-8 md:p-12">
+        <div className="bg-white p-8 md:p-12 relative">
 
           {/* Sticky tab bar */}
-          <div className="sticky top-0 z-30 bg-white pt-4 pb-0">
-            <div className="flex justify-center">
-              <div className="flex justify-between overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full">
-                {items.map((v, i) => (
-                  <button
-                    key={i}
-                    onClick={() => scrollToVideo(i)}
-                    className={`shrink-0 text-xs sm:text-sm font-medium px-4 pt-3 pb-3 border-t-2 transition-all duration-300 ${
-                      activeIndex === i
-                        ? "border-gray-900 text-gray-900 font-bold"
-                        : "border-gray-200 text-gray-400 hover:text-gray-600"
-                    }`}
-                  >
-                    {v.tab}
-                  </button>
-                ))}
-              </div>
+          <div className="sticky top-16 z-30 bg-white pt-2 pb-2">
+            <div className="flex justify-between overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full">
+              {items.map((v, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollToVideo(i)}
+                  className={`shrink-0 text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-4 pt-3 pb-3 border-t-2 transition-all duration-300 ${
+                    activeIndex === i
+                      ? "border-gray-900 text-gray-900 font-bold"
+                      : "border-gray-200 text-gray-400 hover:text-gray-600"
+                  }`}
+                >
+                  {v.tab}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Scroll container — each video takes full viewport height */}
+          {/* Scroll container */}
           <div ref={containerRef} className="mt-8">
             {items.map((video, i) => (
               <div
                 key={i}
                 ref={(el) => (sectionRefs.current[i] = el)}
-                className="flex items-center justify-center transition-all duration-700"
-                style={{ minHeight: "80vh" }}
+                className="flex items-center justify-center"
+                style={{ minHeight: "100vh" }}
               >
                 <div
                   className="w-full transition-all duration-700 ease-out"
                   style={{
                     opacity: activeIndex === i ? 1 : 0,
-                    transform: activeIndex === i ? "translateY(0)" : "translateY(50px)",
+                    transform: activeIndex === i ? "translateY(0px)" : "translateY(40px)",
                     pointerEvents: activeIndex === i ? "auto" : "none",
+                    visibility: visibleSet.has(i) ? "visible" : "hidden",
                   }}
                 >
                   <VideoCard key={`${i}-${activeIndex === i}`} video={video} />

@@ -45,7 +45,7 @@ const Footer = () => {
           {/* Left Side - Logo and Description */}
           <div className="w-full md:w-auto md:max-w-xs">
             <img src={Logo} alt="Zing logo" className="h-8 mb-3" />
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-sm font-normal text-[#878787] leading-relaxed">
               Zing, your ultimate growth partner for e-commerce success!
             </p>
           </div>
@@ -54,11 +54,11 @@ const Footer = () => {
           <div className="flex flex-wrap gap-8 md:gap-12 lg:gap-16">
             {footerData.map((section, index) => (
               <div key={index} className="min-w-[100px]">
-                <h3 className="font-semibold text-gray-900 mb-3 text-sm">
+                <h3 className="font-normal text-[#1C1C1E] mb-3 text-sm">
                   {section.title}
                 </h3>
 
-                <ul className="space-y-2 text-sm text-gray-500">
+                <ul className="space-y-2 text-sm text-[#7D7D7D] font-normal">
                   {section.links.map((link, i) => (
                     <li key={i}>
                       <a href={link.href} className="hover:text-gray-900 transition-colors">
@@ -75,7 +75,7 @@ const Footer = () => {
 
         {/* Your data never stored - Above the line */}
         <div className="mt-6">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm font-normal text-[#1C1C1E]">
             Your data never stored.{" "}
             <a href="/trust-center" className="underline hover:text-gray-900">
               View Trust Center
@@ -86,7 +86,7 @@ const Footer = () => {
 
         {/* Bottom Section - Copyright on left */}
         <div className="mt-3 pt-6 border-t border-gray-200">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-[#1C1C1E] font-normal">
             © 2026 Zing, Inc. All rights reserved.
           </p>
         </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 import { scrollToContact } from "../../../hooks/scrollToContact";
 
@@ -28,13 +27,13 @@ const BusinessSection = () => {
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
           {/* Left Side */}
-          <div className="space-y-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ color: "#1a1f24" }}>
+          <div className="space-y-6 -mt-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#000000]  font-medium leading-tight" style={{ color: "#1a1f24" }}>
               What this means for your business
             </h2>
             <button
               onClick={scrollToContact}
-              className="bg-[#1C1C1E] text-[#FFFFFF] text-xs px-5 py-2.5 rounded-lg font-bold uppercase tracking-widest hover:bg-gray-800 transition-all duration-200"
+              className="bg-[#1C1C1E] text-[#FFFFFF] text-xs px-5 py-2.5 rounded-lg font-normal uppercase tracking-widest hover:bg-gray-800 transition-all duration-200"
             >
               GET STARTED
             </button>
@@ -59,7 +58,7 @@ const BusinessSection = () => {
                     className="rounded-full flex-shrink-0 relative z-10"
                     style={{ width: 13, height: 13, backgroundColor: "#1a1f24" }}
                   />
-                  <p className="text-sm sm:text-base font-medium" style={{ color: "#1a1f24" }}>
+                  <p className="text-sm sm:text-base font-medium text-[#000000] font-normal" >
                     {item}
                   </p>
                 </li>

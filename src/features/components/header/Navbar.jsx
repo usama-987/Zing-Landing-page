@@ -75,7 +75,7 @@ export default function Navbar({
   return (
     <nav ref={navRef} className="w-full sticky top-0 z-50 bg-[#F0F0F0] relative">
       <div className="mx-auto max-w-[1600px] px-4 py-3 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-[5px]">
 
           {/* LOGO */}
           <div className="flex-shrink-0">
@@ -102,7 +102,7 @@ export default function Navbar({
                     className={`text-sm font-medium ${
                       activeLink === link.id
                         ? "text-blue-600"
-                        : "text-[#000000] hover:text-blue-600"
+                        : "text-[#000000] font-normal hover:text-blue-600"
                     }`}
                   >
                     {link.label}
@@ -121,7 +121,7 @@ export default function Navbar({
                         key={i}
                         to={item.to}
                         onClick={() => setOpenDropdown(null)}
-                        className={`block px-5 py-4 text-sm font-medium text-[#1C1C1E] hover:bg-gray-200 transition-colors duration-150 ${
+                        className={`block px-5 py-4 text-sm  text-[#1C1C1E] font-normal hover:bg-gray-200 transition-colors duration-150 ${
                           i !== link.dropdown.length - 1 ? "border-b border-gray-300" : ""
                         }`}
                       >
@@ -143,7 +143,7 @@ export default function Navbar({
                 }
                 onCtaClick?.();
               }}
-              className="bg-[#1C1C1E] text-[#FFFFFF] px-6 py-2 rounded-lg text-xs font-semibold uppercase hover:bg-gray-800"
+              className="bg-[#1C1C1E] text-[#FFFFFF] px-6 py-2 rounded-lg text-xs font-medium uppercase hover:bg-gray-800"
             >
               {ctaText}
             </button>
@@ -182,7 +182,7 @@ export default function Navbar({
                     }
                   }}
                 >
-                  <span className="text-sm font-medium text-[#000000]">
+                  <span className="text-sm font-normal text-[#000000]">
                     {link.label}
                   </span>
 
@@ -198,7 +198,7 @@ export default function Navbar({
                       <Link
                         key={i}
                         to={item.to}
-                        className={`block px-5 py-4 text-sm font-medium text-[#1C1C1E] hover:bg-gray-200 transition-colors duration-150 ${
+                        className={`block px-5 py-4 text-sm  text-[#1C1C1E] font-normal hover:bg-gray-200 transition-colors duration-150 ${
                           i !== link.dropdown.length - 1 ? "border-b border-gray-300" : ""
                         }`}
                         onClick={() => { setMobileOpen(false); setMobileDropdown(null); }}

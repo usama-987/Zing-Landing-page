@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import BgBlue from "../../../assets/DevAug/BgBlue.png";
 import Ecom1 from "../../../assets/DevAug/Ecom1.png";
 import Ecom2 from "../../../assets/DevAug/Ecom2.png";

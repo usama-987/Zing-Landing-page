@@ -1,4 +1,4 @@
-import React from "react";
+
 import HeroImg from "../../../assets/Marketing/Hero.png";
 
 const HeroBanner = ({
@@ -25,12 +25,12 @@ const HeroBanner = ({
 
         {/* Content */}
         <div className="relative z-10 w-full px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-12 lg:py-14 xl:px-16">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold leading-tight text-white">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-light leading-tight text-[#FFFFFF]">
             {title}
             {highlight && (
               <>
                 <br />
-                <span style={{ color: "#60c8f0" }}>{highlight}</span>
+                <span className="text-[#51A2FF]">{highlight}</span>
               </>
             )}
           </h1>
@@ -44,7 +44,7 @@ const HeroBanner = ({
           {buttonText && (
             <button
               onClick={onClick}
-              className="mt-4 sm:mt-6 px-4 py-1.5 bg-white text-[#1C1C1E] text-[10px] sm:text-xs font-semibold uppercase tracking-wide rounded hover:bg-gray-100 active:scale-95 transition-all duration-200"
+              className="mt-4 sm:mt-6 px-4 py-1.5 bg-white text-[#1C1C1E] text-[10px] sm:text-xs font-normal uppercase tracking-wide rounded hover:bg-gray-100 active:scale-95 transition-all duration-200"
             >
               {buttonText}
             </button>

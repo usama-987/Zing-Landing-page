@@ -2,6 +2,10 @@ import Navbar from "../components/header/Navbar";
 import StoryHero from "../components/main/StoryHero";
 import CaseStudyHero from "../components/CaseStudy/CaseStudyHero";
 import CaseStudyStory from "../components/CaseStudy/CaseStudyStory";
+import CaseStudyExperience from "../components/CaseStudy/CaseStudyExperience";
+import CaseStudyText from "../components/CaseStudy/CaseStudyText";
+import CaseStudyTabs from "../components/CaseStudy/CaseStudyTabs";
+import Img1 from "../../assets/CaseStudy1/Img1.png";
 import ReadytoTalk from "../components/Talk/ReadytoTalk";
 import Footer from "../components/footer/Footer";
 import HeroImg from "../../assets/Marketing/Hero.png";
@@ -10,6 +14,57 @@ import AppSumoLogo from "../../assets/CaseStudy1/AppSumo.png";
 import IiIcon from "../../assets/CaseStudy1/Ii.svg";
 import FbIcon from "../../assets/CaseStudy1/Fb.svg";
 import LsIcon from "../../assets/CaseStudy1/Ls.svg";
+import BgBlue from "../../assets/CaseStudy1/BgBlue.png";
+import ChatImg from "../../assets/CaseStudy1/Chat.png";
+import RevenueImg from "../../assets/CaseStudy1/Revenue.png";
+import ChatIcon from "../../assets/CaseStudy1/ChatIcon.svg";
+import FollowUpIcon from "../../assets/CaseStudy1/FollowUp.svg";
+import QuotesIcon from "../../assets/CaseStudy1/Quotes.svg";
+
+const tabsData = [
+  {
+    label: "Successful Deal",
+    content: `Noah appreciates Zing going the extra mile to ensure his Shopify app deal completed successfully.<br/><br/><strong>"The Shopify app for SumoMe is fully up to-date and compliant"</strong><br/>he says breathing a sigh of relief.`,
+    image: Img1,
+    bgImage: BgBlue,
+  },
+  {
+    label: "Critical Reliability",
+    content: `Zing ensured every critical component was tested and verified before launch.<br/><br/><strong>"The reliability of the system exceeded our expectations"</strong><br/>Noah noted after the final review.`,
+    image: Img1,
+    bgImage: BgBlue,
+  },
+  {
+    label: "High Confidence",
+    content: `Noah felt confident throughout the entire process thanks to Zing's transparent communication.<br/><br/><strong>"I always knew exactly where things stood"</strong><br/>he said with satisfaction.`,
+    image: Img1,
+    bgImage: BgBlue,
+  },
+  {
+    label: "Final Recommendation",
+    content: `After the successful project, Noah was happy to recommend Zing to others in his network.<br/><br/><strong>"I would absolutely work with Zing again"</strong><br/>he confirmed without hesitation.`,
+    image: Img1,
+    bgImage: BgBlue,
+  },
+];
+
+const experienceSteps = [
+  {
+    icon: ChatIcon,
+    title: "The Response from Dan Melnick",
+    desc: "Dan messaged me very promptly, very professionally and I think I said I was busy.",
+  },
+  {
+    icon: FollowUpIcon,
+    title: "The Follow-Up",
+    desc: "And then Dan followed up, which most agencies and companies never do. That was a really great sign.",
+  },
+  {
+    icon: QuotesIcon,
+    title: "The Recommendation and Quote",
+    desc: "He was able to give us a quote that seemed reasonable, really fair and a realistic timeline. And I was like, okay, I'll give him a shot.",
+  },
+];
 
 const sections = [
   {
@@ -47,6 +102,7 @@ const AppSumo = () => {
         userImage={UserImg}
         logoImage={AppSumoLogo}
       />
+      
       <CaseStudyStory
         heading="The call for help that overwhelmed everyone"
         blockquote={`Over the years, Noah's worked with people worldwide and currently oversees a team of around 100 people at Sumo. <strong>"We've hired, worked with probably thousands of people by this point,"</strong> he explains.`}
@@ -61,6 +117,30 @@ const AppSumo = () => {
           { value: "$100k", label: "one quote received for", sublabel: '"a few updates"' },
         ]}
       />
+      <CaseStudyExperience
+        title="Noah's Experience with Zing"
+        subtitle="Noah's journey from initial contact to project completion highlights the efficiency and professionalism of working with the Zing team."
+        steps={experienceSteps}
+        bgImage={BgBlue}
+        topImage={ChatImg}
+        bottomImage={RevenueImg}
+        pullQuote1="I was blown away"
+        pullQuote1Sub="Noah was impressed by his experience working with Zing for his Shopify app needs."
+        pullQuote2='"They delivered it on time, on budget and we were able to get that knocked out really, really solidly. I was so impressed."'
+        pullQuote2Sub='Noah enjoyed working with a team that was "so professional".'
+        buttonText="START NOW"
+      />
+
+      <CaseStudyText
+        heading="Further work needed"
+        subtitle="When Noah went back to Shopify to share the app, he discovered some issues in another part of the app that needed resolution."
+        quotes={[
+          `"But I'm excited to take the time to share these guys with other people if they want their stuff worked on for Shopify. I think Dan is the go-to team I'm recommending!"`,
+          "Once again, that's on track. It's on time. It's on budget. And I almost never do testimonials. Someone even asked me to do one last week. And I said, no, because it's not good enough.",
+        ]}
+      />
+      <CaseStudyTabs tabs={tabsData} />
+      
       <ReadytoTalk />
       <Footer />
     </div>

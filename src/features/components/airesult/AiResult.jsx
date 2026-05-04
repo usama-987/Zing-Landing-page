@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import containerBg from "../../../assets/Container.png";
 import img1 from "../../../assets/img1.png";
 import img2 from "../../../assets/img2.png";
@@ -74,9 +74,9 @@ function FeatureRow({ item, index }) {
           textFromRight ? "pre-animate-right" : "pre-animate"
         }${visible ? (textFromRight ? " animate-slide-in-right" : " animate-slide-in-left") : ""}`}
       >
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{item.title}</h3>
-        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item.desc}</p>
-        <button onClick={scrollToContact} className="bg-[#1C1C1E] text-[#FFFFFF] px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wide hover:bg-gray-800 transition-all duration-200">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-[#1C1C1E] max-w-sm">{item.title}</h3>
+        <p className="text-sm sm:text-base text-[#656565] font-normal max-w-sm leading-relaxed">{item.desc}</p>
+        <button onClick={scrollToContact} className="bg-[#1C1C1E] text-[#FFFFFF] font-normal px-5 py-2.5 rounded-lg text-xs sm:text-sm uppercase tracking-wide hover:bg-gray-800 transition-all duration-200">
           {item.btn}
         </button>
       </div>
@@ -111,8 +111,8 @@ const FeaturesSection = () => {
     <section className="w-full py-8">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="bg-white p-8 md:p-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-16">
-            Where AI actually <br /> drives results
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#0F0F10] mb-12 md:mb-16 max-w-lg">
+            Where AI actually drives results
           </h2>
           <div className="space-y-12 md:space-y-16 lg:space-y-20">
             {features.map((item, index) => (

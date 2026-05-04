@@ -30,7 +30,7 @@ const Revenue = ({
 
           {/* LEFT SIDE */}
           <div className="space-y-4 sm:space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-[#0F0F10] leading-tight">
               {title}
               <br />
               {subtitle}
@@ -46,7 +46,7 @@ const Revenue = ({
                     <span className="text-red-500 text-lg font-bold leading-none">×</span>
                   </div>
 
-                  <p className="text-sm sm:text-base text-gray-700">
+                  <p className="text-sm sm:text-base text-[#020202] font-normal ">
                     {point}
                   </p>
                 </div>
@@ -57,7 +57,7 @@ const Revenue = ({
             {quote && (
               <div className="pt-4">
                 <div className="bg-white rounded-lg shadow-lg p-4">
-                  <p className="text-sm sm:text-base lg:text-lg font-medium italic text-gray-900">
+                  <p className="text-sm sm:text-base lg:text-lg font-semibold text-[#000000]">
                     "{quote}"
                   </p>
                 </div>
