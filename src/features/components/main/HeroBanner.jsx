@@ -11,7 +11,7 @@ const HeroBanner = ({
   onClick = () => {},
 }) => {
   return (
-    <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <section className="mt-7 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       <div
         className="relative mx-auto w-full max-w-[1600px] overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl min-h-[280px] sm:min-h-[320px] md:min-h-[350px] lg:min-h-[380px] flex items-start"
         style={{

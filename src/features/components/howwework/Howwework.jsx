@@ -23,7 +23,7 @@ const HowWeWork = () => {
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div
           ref={ref}
-          className={`bg-white p-8 md:p-12 rounded-2xl pre-animate${visible ? " animate-slide-in-left" : ""}`}
+          className={`bg-white p-6 sm:p-8 md:p-12 rounded-2xl pre-animate${visible ? " animate-slide-in-left" : ""}`}
           style={{
             backgroundImage: `
               linear-gradient(rgba(180,190,210,0.18) 1px, transparent 1px),
@@ -32,35 +32,34 @@ const HowWeWork = () => {
             backgroundSize: "60px 60px",
           }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-20 items-center">
 
         {/* Left */}
-        <div className="flex flex-col gap-5 mt-4 lg:mt-30 ">
-          <h2 className="text-5xl lg:text-6xl font-medium text-[#0F0F10] leading-[1.08] tracking-tight">
+        <div className="flex flex-col gap-4 mt-0 md:mt-4 lg:mt-30">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-medium text-[#0F0F10] leading-[1.08] tracking-tight">
             How We Work
           </h2>
-          <p className="text-base text-[#656565] font-normal leading-relaxed max-w-xs">
+          <p className="text-sm sm:text-base text-[#656565] font-normal leading-relaxed max-w-xs">
             A clear process for building software and scaling growth.
           </p>
-          <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-normal uppercase tracking-widest px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-all duration-200">
+          <button onClick={scrollToContact} className="w-fit mt-2 bg-[#1C1C1E] text-[#FFFFFF] text-xs font-normal uppercase tracking-widest px-5 py-3 rounded-lg hover:bg-gray-800 transition-all duration-200">
             Get a free AI & growth audit
           </button>
         </div>
 
         {/* Right — 2×2 card grid */}
-        <div className="grid grid-cols-2 gap-3.5">
+        <div className="grid grid-cols-2 gap-3">
           {steps.map(({ num, title, desc, variant }) => (
             <div
               key={num}
-              className="rounded-2xl p-5 flex flex-col gap-2 min-h-[140px] hover-popup cursor-pointer"
+              className="rounded-2xl p-4 sm:p-5 flex flex-col gap-2 min-h-[120px] sm:min-h-[140px] hover-popup cursor-pointer"
               style={{ background: cardBg[variant] }}
             >
-              {/* Number badge */}
-              <span className="self-start text-xs font-normal text-[#3E3E3E] bg-[#FFFFFF] backdrop-blur-sm px-2.5 py-1 rounded-lg mb-2">
+              <span className="self-start text-xs font-normal text-[#3E3E3E] bg-[#FFFFFF] backdrop-blur-sm px-2.5 py-1 rounded-lg mb-1">
                 {num}
               </span>
-              <p className="text-base font-medium text-[#0A0028]">{title}</p>
-              <p className="text-sm text-[#6C6C6C] font-normal leading-relaxed">{desc}</p>
+              <p className="text-sm sm:text-base font-medium text-[#0A0028]">{title}</p>
+              <p className="text-xs sm:text-sm text-[#6C6C6C] font-normal leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>

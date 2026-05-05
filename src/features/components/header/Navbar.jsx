@@ -75,7 +75,7 @@ export default function Navbar({
   return (
     <nav ref={navRef} className="w-full sticky top-0 z-50 bg-[#F0F0F0] relative">
       <div className="mx-auto max-w-[1600px] px-4 py-3 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="flex items-center justify-between px-[5px]">
+        <div className="flex items-center justify-between px-6 sm:px-4">
 
           {/* LOGO */}
           <div className="flex-shrink-0">
@@ -115,7 +115,7 @@ export default function Navbar({
 
                 {/* Desktop Dropdown */}
                 {link.dropdown && openDropdown === link.id && (
-                  <div className="absolute top-8 left-0 bg-[#F0F0F0] rounded-xl shadow-xl z-50 min-w-[220px] overflow-hidden">
+                  <div className="absolute top-8 left-0 bg-[#FFFFFF] rounded-sm shadow-xl z-50 min-w-[220px] overflow-hidden">
                     {link.dropdown.map((item, i) => (
                       <Link
                         key={i}

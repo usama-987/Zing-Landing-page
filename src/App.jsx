@@ -10,7 +10,23 @@ import FutureConnoisseurs from './features/pages/FutureConnoisseurs'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const titles = {
+      "/": "Home | Zing",
+      "/developer-augmentation": "Developer Augmentation | Zing",
+      "/marketing": "Marketing | Zing",
+      "/partners": "Partners | Zing",
+      "/Software-Development": "Software Development | Zing",
+      "/story/appsumo": "AppSumo | Zing",
+      "/story/future-connoisseurs": "Future Connoisseurs | Zing",
+    };
+
+    document.title = titles[pathname] || "Zing";
+  }, [pathname]);
+
   return null;
 }
 

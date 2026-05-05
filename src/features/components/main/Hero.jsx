@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { scrollToContact } from "../../../hooks/scrollToContact";
-import Trusted1 from "../../../assets/Trusted1.png";
-import Trusted2 from "../../../assets/Truested2.png";
-import Trusted3 from "../../../assets/Trusted3.png";
-import Trusted4 from "../../../assets/Trusted4.png";
-import Trusted5 from "../../../assets/Trusted5.png";
-import Trusted6 from "../../../assets/Trusted6.png";
-import Trusted7 from "../../../assets/Trusted7.png";
-import HeroImage from "../../../assets/Marketing/Hero.png";
+import Trusted1 from "../../../assets/Hero/Trusted1.svg";
+import Trusted2 from "../../../assets/Hero/Trusted2.svg";
+import Trusted3 from "../../../assets/Hero/Trusted3.svg";
+import Trusted4 from "../../../assets/Hero/Trusted4.svg";
+import Trusted5 from "../../../assets/Hero/Trusted5.svg";
+import Trusted6 from "../../../assets/Hero/Trusted6.svg";
+import Trusted7 from "../../../assets/Hero/Trusted7.svg";
+import HeroImage from "../../../assets/Marketing/Hero1.png";
 
 // ─── Default Props ───────────────────────────────────────────────────────────
 
@@ -71,16 +71,28 @@ function BrandCard({ logo, alt }) {
 }
 
 // ─── Trusted By Marquee ───────────────────────────────────────────────────────
-
 function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
-  const repeated = [...trustedBy, ...trustedBy, ...trustedBy];
+  // We use two sets. The goal is to slide the width of ONE set exactly.
+  const repeated = [...trustedBy, ...trustedBy];
+  const gap = 24; // Use a fixed pixel value for perfectly predictable math
 
   return (
     <div className="overflow-hidden px-3 sm:px-4 md:px-6 py-4 sm:py-[18px]">
       <style>{`
         @keyframes marquee-scroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
+          0% { transform: translateX(0); }
+          /* Move the distance of exactly half the container */
+          100% { transform: translateX(calc(-50% - ${gap / 2}px)); }
+        }
+
+        .marquee-inner {
+          display: flex;
+          width: max-content;
+          gap: ${gap}px;
+          animation: marquee-scroll 30s linear infinite;
+          /* Important: prevents 'shimmering' or sub-pixel snapping */
+          backface-visibility: hidden;
+          perspective: 1000px;
         }
       `}</style>
 
@@ -88,20 +100,21 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
         {title}
       </p>
 
-      <div className="overflow-hidden w-full">
-        <div
-          className="flex w-max gap-2 sm:gap-3 hover:[animation-play-state:paused]"
-          style={{ animation: "marquee-scroll 30s linear infinite", willChange: "transform" }}
-        >
+      <div className="overflow-hidden w-full" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
+        <div className="marquee-inner hover:[animation-play-state:paused]">
           {repeated.map((brand, index) => (
-            <BrandCard key={`${brand.id}-${index}`} logo={brand.logo} alt={brand.alt} />
+            <div 
+              key={`${brand.id}-${index}`} 
+              className="flex-shrink-0 flex items-center justify-center"
+            >
+              <BrandCard logo={brand.logo} alt={brand.alt} />
+            </div>
           ))}
         </div>
       </div>
     </div>
   );
 }
-
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 
 export default function HeroSection({
@@ -133,7 +146,7 @@ export default function HeroSection({
   const current = slides[activeIndex];
 
   return (
-    <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <section className="mt-7 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       {/* ── Hero Banner ── */}
       <div className="relative mx-auto w-full max-w-[1600px] overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
         {/* Background image */}

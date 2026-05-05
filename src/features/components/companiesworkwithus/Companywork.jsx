@@ -63,7 +63,7 @@ const CompanyWork = ({
               <img
                 src={backgroundImage}
                 alt="Container background"
-                className="absolute inset-0 w-full h-full object-contain"
+                className="absolute inset-0 w-full h-full object-contain transform translate-y-4"
               />
 
               {/* Inner Revenue Image */}
@@ -71,7 +71,7 @@ const CompanyWork = ({
                 <img
                   src={image}
                   alt="Revenue dashboard"
-                  className="w-full h-auto object-contain rounded-lg shadow-lg"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg transform translate-y-4"
                 />
               </div>
 
