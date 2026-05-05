@@ -36,7 +36,7 @@ const HeroBanner = ({
           </h1>
 
           {description && (
-            <p className="mt-3 sm:mt-4 max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-gray-300">
+            <p className="mt-3 sm:mt-4 max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-[#FFFFFF] font-normal">
               {description}
             </p>
           )}

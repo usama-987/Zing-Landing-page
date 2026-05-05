@@ -14,12 +14,12 @@ const services = [
   {
     icon: FlutterIcon,
     title: "Flutter Developers",
-    description: "Our Flutter developers create cross-platform apps for mobile, web, and desktop from a single codebase, ensuring consistency and efficiency.",
+    description: "We provide Flutter developers to create cross-platform mobile apps with a single codebase, ensuring consistency and efficiency.",
   },
   {
     icon: ReactIcon,
     title: "React Native Developers",
-    description: "Our React Native experts deliver fast, native-like mobile applications for both iOS and Android.",
+    description: "Our React Native experts deliver mobile applications with a native look and feel, leveraging a unified codebase for both iOS and Android.",
   },
 ];
 
@@ -60,21 +60,21 @@ const MobileAppDevelopment = ({
         }`}
       >
         <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#000000] leading-tight">
             {title}
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed max-w-md">{description}</p>
+          <p className="mt-3 text-sm sm:text-base text-[#656565] leading-relaxed max-w-xs">{description}</p>
         </div>
 
         <ul className="space-y-7">
           {items.map((item, i) => (
             <li key={i} className="flex items-start gap-4">
-              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+              <div className="w-5 h-5 shrink-0">
                 <img src={item.icon} alt={item.title} className="w-8 h-8 object-contain" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mt-1 max-w-xs">{item.description}</p>
+                <h3 className="text-base sm:text-lg font-normal text-[#000000]">{item.title}</h3>
+                <p className="text-xs sm:text-sm text-[#656565] leading-relaxed mt-1 max-w-xs">{item.description}</p>
               </div>
             </li>
           ))}

@@ -37,26 +37,26 @@ const StoryHero = ({
 
           {/* LEFT — Text */}
           <div className="space-y-3">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-[#FFFFFF]">
               {title}
               {highlight && (
                 <>
                   <br />
-                  <span style={{ color: "#60c8f0" }}>{highlight}</span>
+                  <span className="text-[#51A2FF]">{highlight}</span>
                 </>
               )}
             </h1>
 
             {description && (
               <p
-                className="text-xs sm:text-sm text-gray-200"
+                className="text-xs sm:text-sm text-[#FFFFFF]"
                 dangerouslySetInnerHTML={{ __html: description }}
               />
             )}
 
             <button
               onClick={scrollToContact}
-              className="mt-2 px-5 py-2 bg-white text-[#1C1C1E] text-[10px] sm:text-xs font-semibold uppercase tracking-wide rounded hover:bg-gray-100 active:scale-95 transition-all duration-200"
+              className="mt-2 px-5 py-2 bg-white text-[#1C1C1E] text-[10px] sm:text-xs font-normal uppercase tracking-wide rounded hover:bg-gray-100 active:scale-95 transition-all duration-200"
             >
               {buttonText}
             </button>

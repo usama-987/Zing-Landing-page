@@ -1,6 +1,6 @@
 
 
-const ServiceCard = ({ title, description, icon, bgColor = "bg-white", iconBgColor = "bg-white" }) => {
+const ServiceCard = ({ title, description, icon, bgColor = "bg-white", iconBgColor = "#FFFFFF" }) => {
   return (
     <div className={`border border-gray-200 ${bgColor} p-6 hover-popup`}>
       {/* Icon */}
@@ -13,12 +13,12 @@ const ServiceCard = ({ title, description, icon, bgColor = "bg-white", iconBgCol
       </div>
 
       {/* Title */}
-      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+      <h3 className="text-base sm:text-lg font-normal text-[#202124]  mb-2">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-gray-500 text-sm leading-relaxed">
+      <p className="text-[#656565] font-normal text-sm leading-relaxed">
         {description}
       </p>
     </div>

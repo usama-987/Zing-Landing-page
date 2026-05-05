@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HeroImage from "../../../assets/Marketing/Hero.png";
+import HeroImage from "../../../assets/Marketing/Hero1.png";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const ReadytoTalk = () => {
@@ -50,7 +50,7 @@ const ReadytoTalk = () => {
           }}
         >
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#FFFFFF] text-center mb-8">
             Ready to Scale? Let's Talk.
           </h2>
 
@@ -108,7 +108,7 @@ const ReadytoTalk = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-10 py-2.5 rounded-md text-white text-sm font-semibold uppercase tracking-widest transition-opacity duration-200"
+                className="px-10 py-2.5 rounded-md text-white text-sm font-normal uppercase tracking-widest transition-opacity duration-200"
                 style={{
                   backgroundColor: "#2862E3",
                   opacity: loading ? 0.7 : 1,

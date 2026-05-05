@@ -18,8 +18,8 @@ const FeatureSection = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
 
             {/* LEFT TEXT */}
-            <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#0F0F10] leading-tight">
+            <div className="flex flex-col justify-center space-y-3 ">
+              <h2 className="text-3xl sm:text-4xl md:text-4xl font-medium text-[#0F0F10] leading-tight  ">
                 {title}
               </h2>
               <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xs ">
@@ -37,7 +37,7 @@ const FeatureSection = ({
                   backgroundPosition: "center",
                   width: "100%",
                   maxWidth: "420px",
-                  height: "300px",
+                  height: "clamp(160px, 30vw, 300px)",
                 }}
               >
                 <img

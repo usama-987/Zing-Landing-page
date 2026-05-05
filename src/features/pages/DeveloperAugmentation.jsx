@@ -28,7 +28,6 @@ const DeveloperAugmentation = () => {
       <FrontendSection />
       <Ecommerce />
       <Ui />
-      <DevelopmentSection/>
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="bg-white p-8 md:p-12 space-y-16 md:space-y-20">
           <WebsiteBuilder />
@@ -36,6 +35,7 @@ const DeveloperAugmentation = () => {
         </div>
       </div>
       <BlockchainSection />
+      <DevelopmentSection/>
       <AugAds />
       <Footer />
     </div>

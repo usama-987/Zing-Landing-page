@@ -55,10 +55,10 @@ const WebsiteBuilder = ({
       {/* LEFT — Text */}
       <div className={`space-y-6 pre-animate${visible ? " animate-slide-in-left" : ""}`}>
         <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#000000] leading-tight">
             {title}
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed max-w-md">
+          <p className="mt-3 text-sm sm:text-base font-normal text-[#656565] leading-relaxed max-w-md">
             {description}
           </p>
         </div>
@@ -66,12 +66,12 @@ const WebsiteBuilder = ({
         <ul className="space-y-7">
           {items.map((item, i) => (
             <li key={i} className="flex items-start gap-4">
-              <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+              <div className="w-5 h-5 shrink-0">
                 <img src={item.icon} alt={item.title} className="w-8 h-8 object-contain" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mt-1 max-w-xs">{item.description}</p>
+                <h3 className="text-base sm:text-lg font-normal text-[#0F0F0F]">{item.title}</h3>
+                <p className="text-xs sm:text-sm text-[#656565] leading-relaxed mt-1 max-w-xs">{item.description}</p>
               </div>
             </li>
           ))}

@@ -31,9 +31,8 @@ const HowWePropel = () => {
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="bg-white p-8 md:p-12">
           {/* Heading above everything */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
-            How We Propel Your
-            <span className="block">Business Forward</span> 
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-[#000000DE] leading-tight mb-8 max-w-lg">
+            How We Propel Your Business Forward
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">

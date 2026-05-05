@@ -126,7 +126,7 @@ const AppSumo = () => {
         bottomImage={RevenueImg}
         pullQuote1="I was blown away"
         pullQuote1Sub="Noah was impressed by his experience working with Zing for his Shopify app needs."
-        pullQuote2='"They delivered it on time, on budget and we were able to get that knocked out really, really solidly. I was so impressed."'
+        pullQuote2='They delivered it on time, on budget and we were able to get that knocked out really, really solidly. I was so impressed.'
         pullQuote2Sub='Noah enjoyed working with a team that was "so professional".'
         buttonText="START NOW"
       />

@@ -19,10 +19,10 @@ const Partner = ({
 
             {/* LEFT TEXT */}
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-4xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              <h2 className="text-4xl sm:text-4xl md:text-5xl font-normal text-[#000000]">
                 {title}
               </h2>
-              <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#000000] leading-relaxed max-w-md">
                 {description}
               </p>
             </div>

@@ -24,25 +24,25 @@ import QuotesIcon from "../../assets/CaseStudy1/Quotes.svg";
 
 const tabsData = [
   {
-    label: "Successful Deal",
-    content: `Noah appreciates Zing going the extra mile to ensure his Shopify app deal completed successfully.<br/><br/><strong>"The Shopify app for SumoMe is fully up to-date and compliant"</strong><br/>he says breathing a sigh of relief.`,
+    label: "Launching the Vision",
+    content: `The Future Connoisseurs website launched officially in 202X. `,
     image: Img1,
     bgImage: BgBlue,
   },
   {
-    label: "Critical Reliability",
+    label: "Audience Feedback",
     content: `Zing ensured every critical component was tested and verified before launch.<br/><br/><strong>"The reliability of the system exceeded our expectations"</strong><br/>Noah noted after the final review.`,
     image: Img1,
     bgImage: BgBlue,
   },
   {
-    label: "High Confidence",
+    label: "Strategic Alignment",
     content: `Noah felt confident throughout the entire process thanks to Zing's transparent communication.<br/><br/><strong>"I always knew exactly where things stood"</strong><br/>he said with satisfaction.`,
     image: Img1,
     bgImage: BgBlue,
   },
   {
-    label: "Final Recommendation",
+    label: "Relentless Perfection",
     content: `After the successful project, Noah was happy to recommend Zing to others in his network.<br/><br/><strong>"I would absolutely work with Zing again"</strong><br/>he confirmed without hesitation.`,
     image: Img1,
     bgImage: BgBlue,
@@ -128,19 +128,21 @@ But not just any one would do for such an important project, according to Shahza
         bgImage={BgBlue}
         topImage={Img2}
         bottomImage={RevenueImg}
-        pullQuote1="I was blown away"
-        pullQuote1Sub="Noah was impressed by his experience working with Zing for his Shopify app needs."
-        pullQuote2='"They delivered it on time, on budget and we were able to get that knocked out really, really solidly. I was so impressed."'
-        pullQuote2Sub='Noah enjoyed working with a team that was "so professional".'
+        pullQuote1="I never felt like they had other clients. I know they have so many, but I was never made to feel like I was anything but their number one priority."
+        pullQuote1Sub=" "
+        pullQuote2='They also took on my project as if it was their own. Treating it as if it was their own company, their own website. That personal touch, dedication and commitment are very, very rare.'
+        pullQuote2Sub='Looking back on his experience working with Zing, Shahzad appreciated the way that Zing treated him throughout. 
+'
         buttonText="START NOW"
       />
 
       <CaseStudyText
         heading="Further work needed"
-        subtitle="When Noah went back to Shopify to share the app, he discovered some issues in another part of the app that needed resolution."
+        subtitle="In web development, the greatest challenge often comes when clients don’t know what they want. With Shahzad, the Zing team found the exact opposite. He confesses:"
         quotes={[
-          `"But I'm excited to take the time to share these guys with other people if they want their stuff worked on for Shopify. I think Dan is the go-to team I'm recommending!"`,
-          "Once again, that's on track. It's on time. It's on budget. And I almost never do testimonials. Someone even asked me to do one last week. And I said, no, because it's not good enough.",
+          `He confesses: “From day one I knew exactly what I wanted.”
+`,
+          "Armed with that strong vision, He cautioned his colleagues at Zing: “You have a mountain to achieve and we don’t have any tools.” ",
         ]}
       />
       <CaseStudyTabs tabs={tabsData} />

@@ -19,7 +19,7 @@ const SoftwareDevelopment = () => {
         description={
           <>
             with High Quality{" "}
-            <span className="font-black">Software Development</span>.
+            <span className="font-extrabold">Software Development</span>.
           </>
         }
         buttonText="GET STARTED"

@@ -20,7 +20,7 @@ const CaseStudyHero = ({
 
             {/* LEFT — Heading + sections */}
             <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900  mb-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#0F0F10]  mb-8">
                 {heading}
               </h2>
 
@@ -29,13 +29,13 @@ const CaseStudyHero = ({
                   <div key={i}>
                     {/* Icon + Title on same line */}
                     <div className="flex items-center gap-3 mb-1">
-                      <img src={section.icon} alt={section.title} className="w-6 h-6 object-contain flex-shrink-0" />
-                      <h3 className="text-sm sm:text-base font-bold text-gray-900">
+                      <img src={section.icon} alt={section.title} className="w-5 h-5 object-contain flex-shrink-0" />
+                      <h3 className="text-sm sm:text-base font-normal text-[#1C1C1E]">
                         {section.title}
                       </h3>
                     </div>
                     {/* Description below */}
-                    <p className="text-xs text-gray-500 leading-relaxed max-w-xs">
+                    <p className="text-xs text-[#656565] leading-relaxed max-w-xs">
                       {section.desc}
                     </p>
                   </div>

@@ -44,7 +44,7 @@ const WhatWeDo = () => {
 
           {/* Header */}
           <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#000000DE]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#000000DE]">
               What We Do
             </h2>
             <p className="text-[#656565] text-sm mt-1">All-encompassing solutions</p>

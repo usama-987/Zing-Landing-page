@@ -40,7 +40,7 @@ const CaseStudyTabs = ({ tabs = [] }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left — text */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-medium text-[#000000] mb-4">
                 {current.label}
               </h2>
               <div

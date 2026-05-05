@@ -51,9 +51,8 @@ const DomainSection = () => {
         >
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-3">
-  Explore Our Mastery in
-  <span className="block">Diverse Domains</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#FFFFFF] mb-3 max-w-xl">
+  Explore Our Mastery in Diverse Domains
 </h2>
           </div>
 

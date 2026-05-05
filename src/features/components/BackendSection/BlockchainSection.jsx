@@ -103,8 +103,8 @@ const BlockchainSection = () => {
             </div>
 
             {/* Center */}
-            <div className="shrink-0 bg-[#1C1C1E] text-white rounded-xl px-5 py-5 text-center w-[180px]">
-              <p className="text-base font-bold leading-snug">
+            <div className="shrink-0 bg-[#000000] text-[#FFFFFF] rounded-xl px-5 py-5 text-center w-[180px]">
+              <p className="text-base font-semibold leading-snug">
                 {centerText}
               </p>
             </div>

@@ -36,7 +36,7 @@ const OurWork = ({ title = "Our Work", projects = defaultProjects }) => {
           className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}
         >
           {/* Centered heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 text-center mb-10 md:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#262626] text-center mb-10 md:mb-14">
             {title}
           </h2>
 

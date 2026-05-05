@@ -49,7 +49,7 @@ export default function FAQSection() {
         <div className="bg-white p-8 md:p-12 rounded-2xl">
 
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-[#000000DE] mb-8">
             FAQ'S
           </h2>
 
@@ -65,7 +65,7 @@ export default function FAQSection() {
                   <span className="text-blue-500 text-xl font-bold w-5 flex-shrink-0 leading-none">
                     {openIndex === index ? "−" : "+"}
                   </span>
-                  <span className="text-sm sm:text-base text-gray-800 font-medium group-hover:text-blue-500 transition-colors duration-200">
+                  <span className="text-sm sm:text-base text-[#000000DE] font-normal group-hover:text-blue-500 transition-colors duration-200">
                     {item.question}
                   </span>
                 </button>

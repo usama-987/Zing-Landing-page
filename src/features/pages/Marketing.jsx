@@ -16,7 +16,11 @@ const Marketing = () => {
       <HeroBanner
         title="Growth Partner Success"
         highlight="Development Team"
-        description='Empowering Business Growth Through E-Commerce'
+        description={
+    <>
+      Empowering Business Growth Through <span className="font-extrabold">E-Commerce</span>
+    </>
+  }
         buttonText="GET STARTED"
         bgImage={HeroImg}
       />

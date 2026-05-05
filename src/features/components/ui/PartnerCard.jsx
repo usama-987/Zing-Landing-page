@@ -11,10 +11,10 @@ const PartnerCard = ({ title, description, icon }) => {
       </div>
 
       {/* Title */}
-      <h3 className="text-sm font-bold text-gray-900">{title}</h3>
+      <h3 className="text-sm font-normal text-[#000000]">{title}</h3>
 
       {/* Description */}
-      <p className="text-gray-500 text-xs leading-relaxed">{description}</p>
+      <p className="text-[#656565] text-xs leading-relaxed">{description}</p>
     </div>
   );
 };

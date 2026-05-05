@@ -9,7 +9,7 @@ const Ui = () => {
 
   // ✅ Data
   const data = {
-    centerText: "UI/UX Design",
+    centerText: "UI/UX",
     services: [
       {
         id: 1,
@@ -68,8 +68,10 @@ const Ui = () => {
 
                     {/* Center Text */}
                     <div className="bg-[#2E6EFE] text-[#FFFFFF] rounded-xl px-6 py-4 text-center w-full max-w-[220px] shadow-md">
-                      <p className="text-sm font-bold leading-snug">
-                        {centerText}
+                      <p className="text-sm font-normal leading-snug flex flex-col items-center">
+                        {centerText} 
+                        <span className="font-black">Design</span>
+                        
                       </p>
                     </div>
 
@@ -104,8 +106,9 @@ const Ui = () => {
 
             {/* Center */}
             <div className="shrink-0 bg-[#2E6EFE] text-[#FFFFFF] rounded-xl px-5 py-5 text-center w-[180px] shadow-md">
-              <p className="font-black leading-snug" style={{ fontSize: '28px', fontWeight: 900 }}>
+              <p className="font-normal leading-snug flex flex-col items-center">
                 {centerText}
+                <span className="font-black">Design</span>
               </p>
             </div>
 

@@ -45,10 +45,10 @@ const FrontendSection = () => {
         >
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-3">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#FFFFFF] mb-3">
               Frontend Development
             </h2>
-            <p className="text-[#CCCCCC] text-sm sm:text-base">
+            <p className="text-[#CCCCCC] font-normal text-sm sm:text-base">
              Crafting sleek, responsive, and user-friendly web interfaces for An exceptional digital experience.
             </p>
           </div>

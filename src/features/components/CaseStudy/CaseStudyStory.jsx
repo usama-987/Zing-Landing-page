@@ -70,15 +70,15 @@ const CaseStudyStory = ({
           className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}
         >
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-8 max-w-lg">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#0F0F10] leading-tight mb-8 max-w-md">
             {heading}
           </h2>
 
           {/* Blockquote */}
           {blockquote && (
-            <div className="border-l-4 border-blue-500 pl-5 mb-8 max-w-5xl">
+            <div className="border-l-4 border-[#2862E3] pl-5 mb-8 max-w-5xl">
               <p
-                className="text-sm sm:text-base text-gray-700"
+                className="text-sm sm:text-base text-[#656565] max-w-3xl"
                 dangerouslySetInnerHTML={{ __html: blockquote }}
               />
             </div>
@@ -89,7 +89,7 @@ const CaseStudyStory = ({
             {quotes.map((q, i) => (
               <div key={i}>
                 <img src={ColonIcon} alt="quote" className="w-8 h-8 mb-2" />
-                <p className="text-xs sm:text-sm text-gray-600 max-w-4xl">
+                <p className="text-xs sm:text-sm text-[#656565] max-w-3xl">
                   {q}
                 </p>
               </div>
@@ -100,14 +100,14 @@ const CaseStudyStory = ({
           {stats.length > 0 && (
             <div
               ref={statsRef}
-              className="bg-[#1C1C1E] rounded-2xl px-8 py-8 grid grid-cols-1 sm:grid-cols-3"
+              className="bg-[#1C1C1E] rounded-lg px-8 py-8 grid grid-cols-1 sm:grid-cols-3"
             >
               {stats.map((stat, i) => (
                 <div key={i} className="text-center px-6 py-2">
-                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tabular-nums">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FFFFFF] tabular-nums">
                     <AnimatedStat value={stat.value} run={statsVisible} />
                   </p>
-                  <p className="text-xs sm:text-sm text-gray-400 mt-2 leading-snug mx-auto">
+                  <p className="text-xs sm:text-sm text-[#FFFFFF] mt-2 leading-snug mx-auto">
                     {stat.label}
                     {stat.sublabel && (
                       <span className="block">{stat.sublabel}</span>

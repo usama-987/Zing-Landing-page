@@ -93,9 +93,9 @@ function VideoCard({ video }) {
       </div>
       {/* Text */}
       <div className="mt-5">
-        <p className="text-xs text-[#37352F] font-medium">{video.label}</p>
+        <p className="text-xs text-[#37352F] font-normal">{video.label}</p>
         <h3 className="text-lg sm:text-xl font-bold text-[#37352F] mt-1 leading-snug">{video.title}</h3>
-        <p className="text-xs sm:text-sm text-[#37352F] mt-2 leading-relaxed">{video.desc}</p>
+        <p className="text-xs sm:text-sm text-[#37352F] font-normal mt-2 leading-relaxed">{video.desc}</p>
       </div>
     </div>
   );
@@ -147,8 +147,8 @@ const VideoTestimonials = ({ items = videos }) => {
                   onClick={() => scrollToVideo(i)}
                   className={`shrink-0 text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-4 pt-3 pb-3 border-t-2 transition-all duration-300 ${
                     activeIndex === i
-                      ? "border-gray-900 text-gray-900 font-bold"
-                      : "border-gray-200 text-gray-400 hover:text-gray-600"
+                      ? "border-gray-900 text-[#000000] font-medium"
+                      : "border-gray-200 text-[#A1A1A1] hover:text-gray-600"
                   }`}
                 >
                   {v.tab}

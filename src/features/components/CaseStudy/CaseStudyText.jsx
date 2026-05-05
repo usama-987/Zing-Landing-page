@@ -20,12 +20,12 @@ const CaseStudyText = ({
             `,
           }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#0F0F10] leading-tight mb-3">
             {heading}
           </h2>
 
           {subtitle && (
-            <p className="text-sm sm:text-base text-gray-900 mb-8 max-w-2xl">
+            <p className="text-sm sm:text-base text-[#373737] mb-8 max-w-xl">
               {subtitle}
             </p>
           )}
@@ -33,7 +33,7 @@ const CaseStudyText = ({
           <div className="space-y-6">
             {quotes.map((q, i) => (
               <div key={i} className="pl-5" style={{ borderLeft: "4px solid #2E2E2E" }}>
-                <p className="text-xs sm:text-sm text-gray-900 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#000000] leading-relaxed max-w-2xl">
                   {q}
                 </p>
               </div>

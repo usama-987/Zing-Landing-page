@@ -24,10 +24,10 @@ const CaseStudyExperience = ({
           className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}
         >
           {/* Title */}
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#0F0F10] mb-1">
             {title}
           </h2>
-          <p className="text-sm text-gray-900 mb-10 max-w-xl">{subtitle}</p>
+          <p className="text-sm text-[#656565] mb-10 max-w-xl">{subtitle}</p>
 
           {/* Top Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-stretch mb-10">
@@ -39,13 +39,13 @@ const CaseStudyExperience = ({
                     <img
                       src={step.icon}
                       alt={step.title}
-                      className="w-6 h-6 object-contain flex-shrink-0"
+                      className="w-5 h-5 object-contain shrink-0"
                     />
-                    <h3 className="text-sm sm:text-base font-bold text-gray-900">
+                    <h3 className="text-sm sm:text-base font-normal text-[#1C1C1E]">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-xs text-gray-900 leading-relaxed max-w-xs">
+                  <p className="text-xs text-[#656565] leading-relaxed max-w-xs">
                     {step.desc}
                   </p>
                 </div>
@@ -101,27 +101,27 @@ const CaseStudyExperience = ({
             <div className="space-y-6 flex flex-col justify-center">
               <div>
                 <img src={ColonIcon} alt="quote" className="w-8 h-8 mb-2" style={{ filter: "brightness(0)" }} />
-                <p className="text-base font-bold text-gray-900 leading-snug">
+                <p className="text-base font-medium text-[#000000] leading-snug">
                   {pullQuote1}
                 </p>
                 {pullQuote1Sub && (
-                  <p className="text-xs text-gray-900 mt-1">{pullQuote1Sub}</p>
+                  <p className="text-xs text-[#656565] mt-1">{pullQuote1Sub}</p>
                 )}
               </div>
 
               <div>
                 <img src={ColonIcon} alt="quote" className="w-8 h-8 mb-2" style={{ filter: "brightness(0)" }} />
-                <p className="text-base font-bold text-gray-900 leading-snug">
+                <p className="text-base font-mrdium text-[#000000] leading-snug">
                   {pullQuote2}
                 </p>
                 {pullQuote2Sub && (
-                  <p className="text-xs text-gray-900 mt-1">{pullQuote2Sub}</p>
+                  <p className="text-xs text-[#656565] mt-1">{pullQuote2Sub}</p>
                 )}
               </div>
 
               <button
                 style={{ backgroundColor: "#1C1C1E", color: "#ffffff" }}
-                className="px-6 py-2 text-sm font-semibold rounded w-fit"
+                className="px-6 py-2 text-sm font-normal rounded w-fit"
               >
                 {buttonText}
               </button>

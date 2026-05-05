@@ -23,9 +23,9 @@ const WorkCard = ({ image, title, desc, btnText }) => {
 
       {/* Text — left aligned */}
       <div className="mt-4 flex flex-col flex-1">
-        <h3 className="text-base sm:text-lg font-bold text-gray-900">{title}</h3>
-        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mt-1 flex-1">{desc}</p>
-        <button className="mt-4 w-fit px-4 py-2 border bg-gray-900 border-gray-900 text-white text-xs font-semibold uppercase tracking-wide rounded-lg transition-all duration-200">
+        <h3 className="text-base sm:text-lg font-semibold text-[#3B3B3B]">{title}</h3>
+        <p className="text-xs sm:text-sm text-[#656565] leading-relaxed mt-1 flex-1">{desc}</p>
+        <button className="mt-4 w-fit px-4 py-2 border bg-[#1C1C1E] border-gray-900 text-[#FFFFFF] text-xs font-normal uppercase tracking-wide rounded-lg transition-all duration-200">
           {btnText}
         </button>
       </div>

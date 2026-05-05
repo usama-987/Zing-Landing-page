@@ -1,4 +1,3 @@
-import React from "react";
 import ServiceCard from "../ui/ServiceCard";
 import MLIcon from "../../../assets/DevAug/Ml.svg";
 import LotIcon from "../../../assets/DevAug/Lot.svg";
@@ -59,8 +58,8 @@ const DevelopmentSection = () => {
         >
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-              More Of over <br />Development teams
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#000000] mb-3 max-w-xl">
+              More Of over Development teams
             </h2>
           </div>
 

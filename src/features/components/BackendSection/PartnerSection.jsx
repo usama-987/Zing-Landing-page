@@ -107,7 +107,7 @@ const PartnerSection = () => {
         >
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#FFFFFF] mb-3">
               OUR PARTNERS
             </h2>
             <p className="text-[#CCCCCC] text-sm sm:text-base">
