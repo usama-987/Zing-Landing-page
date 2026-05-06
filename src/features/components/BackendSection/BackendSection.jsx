@@ -58,7 +58,7 @@ const BackendSection = () => {
         >
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-[#0F0F10] mb-3">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#0F0F10] mb-3">
               Backend Development
             </h2>
             <p className="text-[#656565] font-medium max-w-3xl sm:text-base">
