@@ -20,7 +20,7 @@ const CaseStudyTabs = ({ tabs = [] }) => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className="flex flex-col items-start gap-2 font-medium transition-colors w-full"
+                className="flex flex-col items-start gap-2 font-medium transition-colors w-full cursor-pointer"
               >
                 <span
                   className={`block w-full h-[2px] ${

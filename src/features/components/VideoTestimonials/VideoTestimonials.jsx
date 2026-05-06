@@ -145,7 +145,7 @@ const VideoTestimonials = ({ items = videos }) => {
                 <button
                   key={i}
                   onClick={() => scrollToVideo(i)}
-                  className={`shrink-0 text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-4 pt-3 pb-3 border-t-2 transition-all duration-300 ${
+                  className={`shrink-0 text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-4 pt-3 pb-3 border-t-2 transition-all duration-300 cursor-pointer ${
                     activeIndex === i
                       ? "border-gray-900 text-[#000000] font-medium"
                       : "border-gray-200 text-[#A1A1A1] hover:text-gray-600"

@@ -38,7 +38,7 @@ const CompanyWork = ({
                 <div key={index} className="flex items-start gap-3">
 
                   {/* Red circle with X */}
-                  <div className="w-5 h-5 rounded-full border-2 border-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full border-2 border-green-500 flex items-center justify-center shrink-0 mt-0.5">
                     <span className="text-green-500 text-lg font-bold leading-none">✓</span>
                   </div>
 
