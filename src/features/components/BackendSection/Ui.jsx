@@ -105,8 +105,8 @@ const Ui = () => {
             </div>
 
             {/* Center */}
-            <div className="shrink-0 bg-[#2E6EFE] text-[#FFFFFF] rounded-xl px-5 py-5 text-center w-[180px] shadow-md">
-              <p className="font-normal leading-snug flex flex-col items-center">
+            <div className="shrink-0 bg-[#2E6EFE] text-[#FFFFFF] rounded-xl px-6 py-10 text-center w-[180px] shadow-md">
+              <p className="font-normal text-3xl leading-snug flex flex-col items-center">
                 {centerText}
                 <span className="font-black">Design</span>
               </p>
