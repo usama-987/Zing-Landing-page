@@ -19,7 +19,7 @@ function ScrollToTop() {
       "/developer-augmentation": "Developer Augmentation | Zing",
       "/marketing": "Marketing | Zing",
       "/partners": "Partners | Zing",
-      "/Software-Development": "Software Development | Zing",
+      "/software-development": "Software Development | Zing",
       "/story/appsumo": "AppSumo | Zing",
       "/story/future-connoisseurs": "Future Connoisseurs | Zing",
     };
@@ -39,7 +39,7 @@ const App = () => {
         <Route path="/developer-augmentation" element={<DeveloperAugmentation />} />
         <Route path="/marketing" element={<Marketing />} />
         <Route path="/partners" element={<Partners />} />
-        <Route path="/Software-Development" element={<SoftwareDevelopment/>}/>
+        <Route path="/software-development" element={<SoftwareDevelopment/>}/>
         <Route path="/story/appsumo" element={<AppSumo />} />
         <Route path="/story/future-connoisseurs" element={<FutureConnoisseurs />} />
       </Routes>
