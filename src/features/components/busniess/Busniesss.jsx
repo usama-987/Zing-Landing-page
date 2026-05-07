@@ -58,7 +58,7 @@ const BusinessSection = () => {
                     className="rounded-full flex-shrink-0 relative z-10"
                     style={{ width: 13, height: 13, backgroundColor: "#1a1f24" }}
                   />
-                  <p className="text-sm sm:text-base font-medium text-[#000000] font-normal" >
+                  <p className="text-sm sm:text-base text-[#000000] font-normal" >
                     {item}
                   </p>
                 </li>
