@@ -61,12 +61,7 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
 
   const goToSlide = (index) => {
     if (index === active || animating) return;
-
-    setAnimating(true);
-    setTimeout(() => {
-      setActive(index);
-      setAnimating(false);
-    }, 250);
+    setActive(index);
   };
 
   // Auto play
@@ -110,10 +105,9 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
             {visibleReviews.map((review, index) => (
               <div
                 key={index}
-                className="rounded-xl p-6 transition-all duration-300 hover-popup"
+                className="rounded-xl p-6 hover-popup"
                 style={{
                   backgroundColor: '#F1F9FF',
-                  opacity: animating ? 0.7 : 1,
                 }}
               >
                 {/* Profile */}

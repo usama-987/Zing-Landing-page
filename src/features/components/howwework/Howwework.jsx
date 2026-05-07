@@ -35,7 +35,7 @@ const HowWeWork = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-20 items-center">
 
         {/* Left */}
-        <div className="flex flex-col gap-4 mt-0 md:mt-4 lg:mt-30">
+        <div className="flex flex-col gap-4 mt-0 md:mt-4 lg:mt-30 items-center md:items-start text-center md:text-left">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-medium text-[#0F0F10] leading-[1.08] tracking-tight">
             How We Work
           </h2>
