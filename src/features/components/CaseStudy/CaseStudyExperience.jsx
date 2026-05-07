@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 import ColonIcon from "../../../assets/CaseStudy1/Colon.svg";
 
 const CaseStudyExperience = ({
@@ -120,8 +121,9 @@ const CaseStudyExperience = ({
               </div>
 
               <button
+                onClick={scrollToContact}
                 style={{ backgroundColor: "#1C1C1E", color: "#ffffff" }}
-                className="px-6 py-2 text-sm font-normal rounded w-fit"
+                className="px-6 py-2 text-sm font-normal rounded w-fit hover:bg-gray-800 transition-all duration-200"
               >
                 {buttonText}
               </button>

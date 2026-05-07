@@ -1,5 +1,5 @@
-
 import BgBlue from "../../../assets/SD/BgBlue.png";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 
 const WorkCard = ({ image, title, desc, btnText }) => {
   return (
@@ -25,7 +25,7 @@ const WorkCard = ({ image, title, desc, btnText }) => {
       <div className="mt-4 flex flex-col flex-1">
         <h3 className="text-base sm:text-lg font-semibold text-[#3B3B3B]">{title}</h3>
         <p className="text-xs sm:text-sm text-[#656565] leading-relaxed mt-1 flex-1">{desc}</p>
-        <button className="mt-4 w-fit px-4 py-2 border bg-[#1C1C1E] border-gray-900 text-[#FFFFFF] text-xs font-normal uppercase tracking-wide rounded-lg transition-all duration-200">
+        <button onClick={scrollToContact} className="mt-4 w-fit px-4 py-2 border bg-[#1C1C1E] border-gray-900 text-[#FFFFFF] text-xs font-normal uppercase tracking-wide rounded-lg hover:bg-gray-800 transition-all duration-200">
           {btnText}
         </button>
       </div>

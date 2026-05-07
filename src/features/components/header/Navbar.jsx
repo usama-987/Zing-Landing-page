@@ -78,7 +78,7 @@ export default function Navbar({
         <div className="flex items-center justify-between px-6 sm:px-4">
 
           {/* LOGO */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <a href="/" className="flex items-center">
               <img src={Logo} alt="Logo" className="h-6 sm:h-8 md:h-10" />
             </a>
@@ -121,11 +121,12 @@ export default function Navbar({
                         key={i}
                         to={item.to}
                         onClick={() => setOpenDropdown(null)}
-                        className={`block px-5 py-4 text-sm  text-[#1C1C1E] font-normal hover:bg-gray-200 transition-colors duration-150 ${
-                          i !== link.dropdown.length - 1 ? "border-b border-gray-300" : ""
-                        }`}
+                        className="block px-5 py-4 text-sm text-left text-[#1C1C1E] font-normal hover:bg-gray-200 transition-colors duration-150 relative"
                       >
                         {item.label}
+                        {i !== link.dropdown.length - 1 && (
+                          <div className="absolute bottom-0 left-5 right-5 border-b border-gray-300" />
+                        )}
                       </Link>
                     ))}
                   </div>
@@ -198,12 +199,13 @@ export default function Navbar({
                       <Link
                         key={i}
                         to={item.to}
-                        className={`block px-5 py-4 text-sm  text-[#1C1C1E] font-normal hover:bg-gray-200 transition-colors duration-150 ${
-                          i !== link.dropdown.length - 1 ? "border-b border-gray-300" : ""
-                        }`}
+                        className="block px-5 py-4 text-sm text-left text-[#1C1C1E] font-normal hover:bg-gray-200 transition-colors duration-150 relative"
                         onClick={() => { setMobileOpen(false); setMobileDropdown(null); }}
                       >
                         {item.label}
+                        {i !== link.dropdown.length - 1 && (
+                          <div className="absolute bottom-0 left-5 right-5 border-b border-gray-300" />
+                        )}
                       </Link>
                     ))}
                   </div>

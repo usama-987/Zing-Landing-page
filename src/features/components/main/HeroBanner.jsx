@@ -1,5 +1,5 @@
-
 import HeroImg from "../../../assets/Marketing/Hero.png";
+import { scrollToContact } from "../../../hooks/scrollToContact";
 
 const HeroBanner = ({
   title = "",
@@ -8,7 +8,7 @@ const HeroBanner = ({
   buttonText = "",
   bgImage = "",
   stats = [],
-  onClick = () => {},
+  onClick,
 }) => {
   return (
     <section className="mt-7 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
@@ -43,7 +43,7 @@ const HeroBanner = ({
 
           {buttonText && (
             <button
-              onClick={onClick}
+              onClick={onClick || scrollToContact}
               className="mt-4 sm:mt-6 px-4 py-1.5 bg-white text-[#1C1C1E] text-[10px] sm:text-xs font-normal uppercase tracking-wide rounded hover:bg-gray-100 active:scale-95 transition-all duration-200"
             >
               {buttonText}
