@@ -73,7 +73,7 @@ export default function Navbar({
   };
 
   return (
-    <nav ref={navRef} className="w-full sticky top-0 z-50 bg-[#F0F0F0] relative">
+    <nav ref={navRef} className="w-full sticky top-0 z-50 bg-[#F0F0F0] ">
       <div className="mx-auto max-w-[1600px] px-4 py-3 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="flex items-center justify-between px-6 sm:px-4">
 
