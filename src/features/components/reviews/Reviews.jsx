@@ -105,7 +105,7 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
             {visibleReviews.map((review, index) => (
               <div
                 key={index}
-                className="rounded-xl p-6 hover-popup"
+                className="rounded-xl p-6 hover-popup flex flex-col min-h-[220px] sm:min-h-[240px]"
                 style={{
                   backgroundColor: '#F1F9FF',
                 }}
@@ -131,7 +131,7 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
                 </div>
 
                 {/* Review Text */}
-                <p className="text-sm font-nomal text-[#656565] leading-relaxed">
+                <p className="text-sm font-nomal text-[#656565] leading-relaxed flex-1">
                   "{review.text}"
                 </p>
               </div>

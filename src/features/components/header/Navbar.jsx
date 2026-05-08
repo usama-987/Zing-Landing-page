@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "../../../assets/logo.png";
 import arrow from "../../../assets/SVG.png";
 
@@ -44,6 +44,16 @@ export default function Navbar({
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const navRef = useRef(null);
+  const location = useLocation();
+
+  // Check if current route matches link
+  const isActive = (link) => {
+    if (link.to && location.pathname === link.to) return true;
+    if (link.dropdown) {
+      return link.dropdown.some(item => location.pathname === item.to);
+    }
+    return false;
+  };
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -100,7 +110,7 @@ export default function Navbar({
                 >
                   <span
                     className={`text-sm font-medium ${
-                      activeLink === link.id
+                      isActive(link)
                         ? "text-blue-600"
                         : "text-[#000000] font-normal hover:text-blue-600"
                     }`}
@@ -183,7 +193,9 @@ export default function Navbar({
                     }
                   }}
                 >
-                  <span className="text-sm font-normal text-[#000000]">
+                  <span className={`text-sm font-normal ${
+                    isActive(link) ? "text-blue-600 font-medium" : "text-[#000000]"
+                  }`}>
                     {link.label}
                   </span>
 
@@ -194,17 +206,17 @@ export default function Navbar({
 
                 {/* Mobile Dropdown */}
                 {link.dropdown && mobileDropdown === link.id && (
-                  <div className="mt-2 bg-[#F0F0F0] rounded-xl shadow-md overflow-hidden">
+                  <div className="mt-1.5 bg-[#FFFFFF] rounded-md shadow-md overflow-hidden max-w-[200px]">
                     {link.dropdown.map((item, i) => (
                       <Link
                         key={i}
                         to={item.to}
-                        className="block px-5 py-4 text-sm text-left text-[#1C1C1E] font-normal hover:bg-gray-200 transition-colors duration-150 relative"
+                        className="block px-3 py-1.5 text-[11px] text-left text-[#1C1C1E] font-normal hover:bg-gray-100 transition-colors duration-150 relative"
                         onClick={() => { setMobileOpen(false); setMobileDropdown(null); }}
                       >
                         {item.label}
                         {i !== link.dropdown.length - 1 && (
-                          <div className="absolute bottom-0 left-5 right-5 border-b border-gray-300" />
+                          <div className="absolute bottom-0 left-3 right-3 border-b border-gray-200" />
                         )}
                       </Link>
                     ))}
