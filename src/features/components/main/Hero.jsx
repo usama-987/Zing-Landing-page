@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { scrollToContact } from "../../../hooks/scrollToContact";
 import Trusted1 from "../../../assets/Hero/Trusted1.svg";
 import Trusted2 from "../../../assets/Hero/Trusted2.svg";
@@ -72,52 +72,36 @@ function BrandCard({ logo, alt }) {
 
 // ─── Trusted By Marquee ───────────────────────────────────────────────────────
 function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
-  const [x, setX] = useState(0);
-  const containerRef = useState(null)[0];
-  const animationRef = useState(null)[0];
+  // We use two sets. The goal is to slide the width of ONE set exactly.
   const repeated = [...trustedBy, ...trustedBy];
-  const gap = 24;
-
-  useEffect(() => {
-    let animationFrameId;
-    let currentX = 0;
-    const speed = 0.5; // pixels per frame
-
-    const animate = () => {
-      currentX -= speed;
-      
-      // Calculate reset point (half width + half gap)
-      const cardWidth = 148; // max card width
-      const singleSetWidth = (cardWidth + gap) * trustedBy.length;
-      
-      if (Math.abs(currentX) >= singleSetWidth) {
-        currentX = 0;
-      }
-      
-      setX(currentX);
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animationFrameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [trustedBy.length]);
+  const gap = 24; // Use a fixed pixel value for perfectly predictable math
 
   return (
     <div className="overflow-hidden px-3 sm:px-4 md:px-6 py-4 sm:py-[18px]">
+      <style>{`
+        @keyframes marquee-scroll {
+          0% { transform: translateX(0); }
+          /* Move the distance of exactly half the container */
+          100% { transform: translateX(calc(-50% - ${gap / 2}px)); }
+        }
+
+        .marquee-inner {
+          display: flex;
+          width: max-content;
+          gap: ${gap}px;
+          animation: marquee-scroll 30s linear infinite;
+          /* Important: prevents 'shimmering' or sub-pixel snapping */
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+      `}</style>
+
       <p className="mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl font-medium text-[#0F0F10]">
         {title}
       </p>
 
       <div className="overflow-hidden w-full" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
-        <div 
-          ref={containerRef}
-          style={{
-            display: 'flex',
-            gap: `${gap}px`,
-            transform: `translate3d(${x}px, 0, 0)`,
-            willChange: 'transform',
-          }}
-        >
+        <div className="marquee-inner hover:[animation-play-state:paused]">
           {repeated.map((brand, index) => (
             <div 
               key={`${brand.id}-${index}`} 
