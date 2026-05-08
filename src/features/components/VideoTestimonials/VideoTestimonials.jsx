@@ -171,6 +171,7 @@ const VideoTestimonials = ({ items = videos }) => {
                   style={{
                     opacity: activeIndex === i ? 1 : 0,
                     transform: activeIndex === i ? "translateY(0px)" : "translateY(40px)",
+                    WebkitTransform: activeIndex === i ? "translateY(0px)" : "translateY(40px)",
                     pointerEvents: activeIndex === i ? "auto" : "none",
                     visibility: visibleSet.has(i) ? "visible" : "hidden",
                   }}

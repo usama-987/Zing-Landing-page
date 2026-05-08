@@ -15,6 +15,13 @@ const CaseStudyHero = ({
         <div
           ref={ref}
           className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}
+          style={{
+            transform: visible ? 'scale(1)' : 'scale(0.95)',
+            WebkitTransform: visible ? 'scale(1)' : 'scale(0.95)',
+            opacity: visible ? 1 : 0,
+            transition: 'all 0.6s ease-out',
+            WebkitTransition: 'all 0.6s ease-out',
+          }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-stretch">
 

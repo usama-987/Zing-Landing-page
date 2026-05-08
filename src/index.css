@@ -25,10 +25,12 @@ body {
   from {
     opacity: 0;
     transform: translateX(-60px);
+    -webkit-transform: translateX(-60px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
+    -webkit-transform: translateX(0);
   }
 }
 
@@ -37,26 +39,31 @@ body {
     from {
       opacity: 0;
       transform: translateX(-30px);
+      -webkit-transform: translateX(-30px);
     }
     to {
       opacity: 1;
       transform: translateX(0);
+      -webkit-transform: translateX(0);
     }
   }
 }
 
 .animate-slide-in-left {
   animation: slide-in-left 0.7s ease forwards;
+  -webkit-animation: slide-in-left 0.7s ease forwards;
 }
 
 @keyframes slide-in-right {
   from {
     opacity: 0;
     transform: translateX(60px);
+    -webkit-transform: translateX(60px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
+    -webkit-transform: translateX(0);
   }
 }
 
@@ -65,54 +72,62 @@ body {
     from {
       opacity: 0;
       transform: translateX(30px);
+      -webkit-transform: translateX(30px);
     }
     to {
       opacity: 1;
       transform: translateX(0);
+      -webkit-transform: translateX(0);
     }
   }
 }
 
 .animate-slide-in-right {
   animation: slide-in-right 0.7s ease forwards;
+  -webkit-animation: slide-in-right 0.7s ease forwards;
 }
 
 .pre-animate {
   opacity: 0;
   transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
 }
 
 @media (max-width: 768px) {
   .pre-animate {
     transform: translateX(-30px);
+    -webkit-transform: translateX(-30px);
   }
 }
 
 .pre-animate-right {
   opacity: 0;
   transform: translateX(60px);
+  -webkit-transform: translateX(60px);
 }
 
 @media (max-width: 768px) {
   .pre-animate-right {
     transform: translateX(30px);
+    -webkit-transform: translateX(30px);
   }
 }
 
 .hover-popup {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+  -webkit-transition: -webkit-transform 0.3s ease;
 }
 
 .hover-popup:hover,
 .hover-popup:active {
-  transform: scale(1.04) translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
 }
 
 @media (max-width: 768px) {
   .hover-popup:active {
-    transform: scale(1.03) translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
   }
 }
 
@@ -127,4 +142,5 @@ body {
 
 .animate-fade-in {
   animation: fade-in 0.4s ease-in-out;
+  -webkit-animation: fade-in 0.4s ease-in-out;
 }

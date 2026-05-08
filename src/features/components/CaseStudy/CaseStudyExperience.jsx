@@ -23,6 +23,13 @@ const CaseStudyExperience = ({
         <div
           ref={ref}
           className={`bg-white p-8 md:p-12 pre-animate${visible ? " animate-slide-in-left" : ""}`}
+          style={{
+            transform: visible ? 'scale(1)' : 'scale(0.95)',
+            WebkitTransform: visible ? 'scale(1)' : 'scale(0.95)',
+            opacity: visible ? 1 : 0,
+            transition: 'all 0.6s ease-out',
+            WebkitTransition: 'all 0.6s ease-out',
+          }}
         >
           {/* Title */}
           <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#0F0F10] mb-1">

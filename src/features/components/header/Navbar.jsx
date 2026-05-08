@@ -226,7 +226,7 @@ export default function Navbar({
             ))}
 
             {/* CTA MOBILE */}
-            <div className="flex justify-center">
+            <div className="flex">
               <button
                 onClick={() => {
                   setMobileOpen(false);
@@ -237,7 +237,7 @@ export default function Navbar({
                   }
                   onCtaClick?.();
                 }}
-                className="bg-[#1C1C1E] text-[#FFFFFF] px-6 py-2 rounded-lg text-xs font-medium uppercase"
+                className="bg-[#1C1C1E] text-[#FFFFFF] px-6 py-2 rounded-lg text-xs font-normal uppercase"
               >
                 {ctaText}
               </button>

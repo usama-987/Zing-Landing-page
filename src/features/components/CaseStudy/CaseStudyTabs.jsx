@@ -13,6 +13,13 @@ const CaseStudyTabs = ({ tabs = [] }) => {
         <div
           ref={ref}
           className={`bg-[#ffffff] p-8 md:p-10 pre-animate${visible ? " animate-slide-in-left" : ""}`}
+          style={{
+            transform: visible ? 'scale(1)' : 'scale(0.95)',
+            WebkitTransform: visible ? 'scale(1)' : 'scale(0.95)',
+            opacity: visible ? 1 : 0,
+            transition: 'all 0.6s ease-out',
+            WebkitTransition: 'all 0.6s ease-out',
+          }}
         >
           {/* Tab Nav */}
           <div className="grid grid-cols-4 gap-6 mb-8">

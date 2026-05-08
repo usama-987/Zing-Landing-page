@@ -80,9 +80,14 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
     <div className="overflow-hidden px-3 sm:px-4 md:px-6 py-4 sm:py-[18px]">
       <style>{`
         @keyframes marquee-scroll {
-          0% { transform: translateX(0); }
-          /* Move the distance of exactly half the container */
-          100% { transform: translateX(calc(-50% - ${gap / 2}px)); }
+          0% { 
+            transform: translateX(0); 
+            -webkit-transform: translateX(0);
+          }
+          100% { 
+            transform: translateX(calc(-50% - ${gap / 2}px)); 
+            -webkit-transform: translateX(calc(-50% - ${gap / 2}px));
+          }
         }
 
         .marquee-inner {
@@ -90,9 +95,13 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
           width: max-content;
           gap: ${gap}px;
           animation: marquee-scroll 30s linear infinite;
-          /* Important: prevents 'shimmering' or sub-pixel snapping */
+          -webkit-animation: marquee-scroll 30s linear infinite;
           backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
           perspective: 1000px;
+          -webkit-perspective: 1000px;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
         }
       `}</style>
 
@@ -100,7 +109,10 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
         {title}
       </p>
 
-      <div className="overflow-hidden w-full" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
+      <div className="overflow-hidden w-full" style={{ 
+        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+      }}>
         <div className="marquee-inner hover:[animation-play-state:paused]">
           {repeated.map((brand, index) => (
             <div 
@@ -169,6 +181,7 @@ export default function HeroSection({
                 style={{
                   opacity: i === activeIndex ? (animating ? 0 : 1) : 0,
                   transform: i === activeIndex && animating ? "translateY(10px)" : "translateY(0)",
+                  WebkitTransform: i === activeIndex && animating ? "translateY(10px)" : "translateY(0)",
                   position: i === activeIndex ? "relative" : "absolute",
                   top: 0, left: 0, right: 0,
                   pointerEvents: i === activeIndex ? "auto" : "none",
