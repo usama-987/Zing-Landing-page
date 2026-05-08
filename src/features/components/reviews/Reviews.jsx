@@ -57,10 +57,17 @@ const UserReviews = [
 
 const Reviews = ({ autoPlayInterval =2000 }) => {
   const [active, setActive] = useState(0);
-  const [animating, setAnimating] = useState(false);
+
+  // Preload all images
+  useEffect(() => {
+    UserReviews.forEach((review) => {
+      const img = new Image();
+      img.src = review.img;
+    });
+  }, []);
 
   const goToSlide = (index) => {
-    if (index === active || animating) return;
+    if (index === active) return;
     setActive(index);
   };
 
@@ -104,8 +111,8 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {visibleReviews.map((review, index) => (
               <div
-                key={index}
-                className="rounded-xl p-6 hover-popup flex flex-col min-h-[220px] sm:min-h-[240px]"
+                key={`${review.name}-${active}`}
+                className="rounded-xl p-6 hover-popup flex flex-col min-h-[220px] sm:min-h-[240px] animate-fade-in"
                 style={{
                   backgroundColor: '#F1F9FF',
                 }}
@@ -116,6 +123,7 @@ const Reviews = ({ autoPlayInterval =2000 }) => {
                     src={review.img}
                     alt={review.name}
                     className="w-12 h-12 rounded-full object-cover"
+                    loading="eager"
                   />
                   <div>
                     <h3 className="font-normal text-[#000000DE] text-sm">{review.name}</h3>

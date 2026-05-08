@@ -6,7 +6,7 @@ import Busniess from "../components/busniess/Busniesss"
 import BusniessImpact from "../components/busniess/BusinessImpact"
 import HowWeWork from '../components/howwework/Howwework'
 import CompanyWork from '../components/companiesworkwithus/Companywork'
-import Footer from '../components/footer/Footer'
+import OldFooter from '../components/footer/OldFooter'
 import Ads from "../components/ads/Ads"
 import Reviews from '../components/reviews/Reviews'
 
@@ -24,7 +24,7 @@ const Home = () => {
       <CompanyWork/>
       <Reviews />
       <Ads />
-      <Footer />
+      <OldFooter />
 
     </div>
   )

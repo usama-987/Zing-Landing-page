@@ -7,7 +7,7 @@ import CaseStudyText from "../components/CaseStudy/CaseStudyText";
 import CaseStudyTabs from "../components/CaseStudy/CaseStudyTabs";
 import Img1 from "../../assets/CaseStudy1/Img1.png";
 import ReadytoTalk from "../components/Talk/ReadytoTalk";
-import Footer from "../components/footer/Footer";
+import OldFooter from "../components/footer/OldFooter";
 import HeroImg from "../../assets/Marketing/Hero.png";
 import UserImg from "../../assets/CaseStudy1/User.png";
 import AppSumoLogo from "../../assets/CaseStudy1/AppSumo.png";
@@ -142,7 +142,7 @@ const AppSumo = () => {
       <CaseStudyTabs tabs={tabsData} />
       
       <ReadytoTalk />
-      <Footer />
+      <OldFooter />
     </div>
   );
 };

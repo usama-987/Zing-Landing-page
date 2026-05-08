@@ -1,5 +1,5 @@
 import Navbar from "../components/header/Navbar";
-import Footer from "../components/footer/Footer";
+import OldFooter from "../components/footer/OldFooter";
 import HeroBanner from "../components/main/HeroBanner";
 import HeroImg from '../../assets/Marketing/Hero.png'
 import Partner from "../components/WhyPartner/Partner";
@@ -24,7 +24,7 @@ const Partners = () => {
       <Partner />
       <PartnerSection/>
       <ReadytoTalk/>
-      <Footer />
+      <OldFooter />
     </div>
   );
 };

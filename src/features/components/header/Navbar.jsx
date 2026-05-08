@@ -193,7 +193,7 @@ export default function Navbar({
                     }
                   }}
                 >
-                  <span className={`text-sm font-normal ${
+                  <span className={`text-base font-normal ${
                     isActive(link) ? "text-blue-600 font-medium" : "text-[#000000]"
                   }`}>
                     {link.label}
@@ -226,20 +226,22 @@ export default function Navbar({
             ))}
 
             {/* CTA MOBILE */}
-            <button
-              onClick={() => {
-                setMobileOpen(false);
-                if (ctaHref.startsWith("#")) {
-                  document.querySelector(ctaHref)?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }
-                onCtaClick?.();
-              }}
-              className="bg-[#1C1C1E] text-[#FFFFFF] py-2 rounded-lg text-sm"
-            >
-              {ctaText}
-            </button>
+            <div className="flex justify-center">
+              <button
+                onClick={() => {
+                  setMobileOpen(false);
+                  if (ctaHref.startsWith("#")) {
+                    document.querySelector(ctaHref)?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }
+                  onCtaClick?.();
+                }}
+                className="bg-[#1C1C1E] text-[#FFFFFF] px-6 py-2 rounded-lg text-xs font-medium uppercase"
+              >
+                {ctaText}
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -6,7 +6,7 @@ import CaseStudyText from "../components/CaseStudy/CaseStudyText";
 import CaseStudyTabs from "../components/CaseStudy/CaseStudyTabs";
 import Img1 from "../../assets/CaseStudy2/Img1.png";
 import ReadytoTalk from "../components/Talk/ReadytoTalk";
-import Footer from "../components/footer/Footer";
+import OldFooter from "../components/footer/OldFooter";
 import HeroImg from "../../assets/Marketing/Hero.png";
 import UserImg from "../../assets/CaseStudy2/User.png";
 import FcLogo from "../../assets/CaseStudy2/Fc.png";
@@ -147,7 +147,7 @@ But not just any one would do for such an important project, according to Shahza
       />
       <CaseStudyTabs tabs={tabsData} />
       <ReadytoTalk />
-      <Footer />
+      <OldFooter />
     </div>
   );
 };

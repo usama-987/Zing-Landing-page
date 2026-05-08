@@ -1,7 +1,7 @@
 import Navbar from '../components/header/Navbar'
 import HeroBanner from '../components/main/HeroBanner'
 import HeroImg from "../../assets/Marketing/Hero.png";
-import Footer from '../components/footer/Footer';
+import OldFooter from '../components/footer/OldFooter';
 import Reviews from '../components/reviews/Reviews';
 import DomainSection from '../components/Domain/DomainSection';
 import WhatWeDo from "../components/Whatwedo/WhatWeDo";
@@ -30,7 +30,7 @@ const Marketing = () => {
       <Reviews/>
       <FAQSection/>
       <ReadytoTalk />
-      <Footer />
+      <OldFooter />
     </div>
   )
 }

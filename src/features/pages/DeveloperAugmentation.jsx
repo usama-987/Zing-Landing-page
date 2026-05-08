@@ -6,7 +6,7 @@ import BackendSection from '../components/BackendSection/BackendSection'
 import FrontendSection from '../components/BackendSection/FrontendSection'
 import BlockchainSection from '../components/BackendSection/BlockchainSection';
 import AugAds from '../components/ads/AugAds'
-import Footer from '../components/footer/Footer'
+import OldFooter from '../components/footer/OldFooter'
 import DevelopmentSection from '../components/BackendSection/DevelopmentSection';
 import Ui from '../components/BackendSection/Ui';
 import WebsiteBuilder from '../components/WebsiteBuilder/WebsiteBuilder';
@@ -37,7 +37,7 @@ const DeveloperAugmentation = () => {
       <BlockchainSection />
       <DevelopmentSection/>
       <AugAds />
-      <Footer />
+      <OldFooter />
     </div>
   )
 }

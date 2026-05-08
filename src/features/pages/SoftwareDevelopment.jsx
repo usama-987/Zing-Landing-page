@@ -1,7 +1,7 @@
 import Navbar from "../components/header/Navbar";
 import HeroBanner from "../components/main/HeroBanner";
 import HeroImg from '../../assets/Marketing/Hero.png';
-import Footer from "../components/footer/Footer";
+import OldFooter from "../components/footer/OldFooter";
 import FAQSection from "../components/FAQs/Faqs";
 import ReadytoTalk from "../components/Talk/ReadytoTalk";
 import OurWork from "../components/ourwork/OurWork";
@@ -30,7 +30,7 @@ const SoftwareDevelopment = () => {
       <OurWork />
       <FAQSection />
       <ReadytoTalk />
-      <Footer />
+      <OldFooter />
     </div>
   );
 };
