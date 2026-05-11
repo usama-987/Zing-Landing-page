@@ -12,7 +12,7 @@ const CaseStudyTabs = ({ tabs = [] }) => {
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div
           ref={ref}
-          className={`bg-[#ffffff] p-8 md:p-10 pre-animate${visible ? " animate-slide-in-left" : ""}`}
+          className="bg-[#ffffff] p-8 md:p-10"
           style={{
             transform: visible ? 'scale(1)' : 'scale(0.95)',
             WebkitTransform: visible ? 'scale(1)' : 'scale(0.95)',

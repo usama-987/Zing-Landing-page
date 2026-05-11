@@ -80,13 +80,11 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
     <div className="overflow-hidden px-3 sm:px-4 md:px-6 py-4 sm:py-[18px]">
       <style>{`
         @keyframes marquee-scroll {
-          0% { 
-            transform: translateX(0); 
-            -webkit-transform: translateX(0);
+          from { 
+            transform: translate3d(0, 0, 0); 
           }
-          100% { 
-            transform: translateX(calc(-50% - ${gap / 2}px)); 
-            -webkit-transform: translateX(calc(-50% - ${gap / 2}px));
+          to { 
+            transform: translate3d(calc(-50% - ${gap / 2}px), 0, 0); 
           }
         }
 
@@ -95,13 +93,19 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
           width: max-content;
           gap: ${gap}px;
           animation: marquee-scroll 30s linear infinite;
-          -webkit-animation: marquee-scroll 30s linear infinite;
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-          perspective: 1000px;
-          -webkit-perspective: 1000px;
-          transform: translateZ(0);
-          -webkit-transform: translateZ(0);
+          will-change: transform;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+        
+        /* Force hardware acceleration on Safari iOS */
+        @supports (-webkit-touch-callout: none) {
+          .marquee-inner {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+          }
         }
       `}</style>
 
@@ -118,6 +122,10 @@ function TrustedByMarquee({ trustedBy, title = "Trusted by" }) {
             <div 
               key={`${brand.id}-${index}`} 
               className="flex-shrink-0 flex items-center justify-center"
+              style={{
+                transform: 'translate3d(0, 0, 0)',
+                WebkitTransform: 'translate3d(0, 0, 0)'
+              }}
             >
               <BrandCard logo={brand.logo} alt={brand.alt} />
             </div>
