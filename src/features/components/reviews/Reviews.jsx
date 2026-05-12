@@ -55,7 +55,7 @@ const UserReviews = [
   },
 ];
 
-const Reviews = ({ autoPlayInterval =2000 }) => {
+const Reviews = ({ autoPlayInterval =4000 }) => {
   const [active, setActive] = useState(0);
 
   // Preload all images

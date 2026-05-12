@@ -211,7 +211,7 @@ export default function Navbar({
                       <Link
                         key={i}
                         to={item.to}
-                        className="block px-3 py-1.5 text-[11px] text-left text-[#1C1C1E] font-normal hover:bg-gray-100 transition-colors duration-150 relative"
+                        className="block px-3 py-1.5 text-[13px] text-left text-[#1C1C1E] font-normal hover:bg-gray-100 transition-colors duration-150 relative"
                         onClick={() => { setMobileOpen(false); setMobileDropdown(null); }}
                       >
                         {item.label}
